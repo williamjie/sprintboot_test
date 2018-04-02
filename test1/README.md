@@ -23,6 +23,7 @@ spring-boot 支持多种模版引擎包括：
 
 Spring boot 同步处理 以及异步处理消息
 
+QPS 模糊等于10*并发数量
 
 --------------------------------------------------------------
 /Users/zj/company_code/IdeaProjects/test1

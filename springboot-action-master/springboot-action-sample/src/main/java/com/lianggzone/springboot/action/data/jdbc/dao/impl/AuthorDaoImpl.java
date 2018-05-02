@@ -35,7 +35,7 @@ public class AuthorDaoImpl implements AuthorDao {
         return jdbcTemplate.update("update t_author set real_name = ?, nick_name = ? where id = ?", 
                 new Object[]{author.getRealName(), author.getNickName(), author.getId()});      
     }
- 
+
     @Override
     public int delete(Long id) {
         return jdbcTemplate.update("delete from t_author where id = ?", id);

@@ -1,3 +1,6 @@
+
+demotest:log日志,每日切割；health 检查；http方式web请求；
+
 …or create a new repository on the command line
  echo "# sprintboot_test" >> README.md
 git init

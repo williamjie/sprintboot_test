@@ -37,7 +37,7 @@ public class Welcome2Controller {
 	@RequestMapping("/template/freemarker/welcome2")
 	public String welcome2(Map<String, Object> model) throws Exception {
 		model.put("time", new Date());
-		model.put("message", "梁桂钊");
+		model.put("message", "朱杰");
 		
 		Template template = configuration.getTemplate("welcome.ftl"); 
 	    String content = FreeMarkerTemplateUtils.processTemplateIntoString(template, model);  

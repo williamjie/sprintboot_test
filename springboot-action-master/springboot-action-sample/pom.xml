@@ -9,6 +9,7 @@
  	</parent>
 
 	<groupId>com.lianggzone.demo</groupId>
+	<!-- <groupId>com.lianggzone.springboot.main</groupId> -->
 	<artifactId>springboot-action-sample</artifactId>
 	<version>0.1</version>
 	<packaging>jar</packaging>

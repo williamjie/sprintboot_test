@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 @ComponentScan(basePackages = { "com.lianggzone.springboot" })
 public class WebMain {
-	
+
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(WebMain.class, args);
 	}

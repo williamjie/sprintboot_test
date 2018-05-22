@@ -31,7 +31,7 @@ public class WelcomeController {
 	@RequestMapping("/template/freemarker/welcome")
 	public String welcome(Map<String, Object> model) {
 		model.put("time", new Date());
-		model.put("message", "梁桂钊");
+		model.put("message", "朱杰");
 		return "welcome";
 	}
 }

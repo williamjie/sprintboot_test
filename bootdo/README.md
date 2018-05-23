@@ -1,3 +1,11 @@
+
+
+use mysql； //打开库    show tables;
+create bootdo;
+use bootdo;
+source /home/gfzhujie/zhujie/mysql/bootdo.sql
+
+
 # BootDo 面向学习型的开源框架
 
 ## 平台简介

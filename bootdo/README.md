@@ -5,6 +5,13 @@ create bootdo;
 use bootdo;
 source /home/gfzhujie/zhujie/mysql/bootdo.sql
 
+####************************#####
+mvn install  生成jar包
+target 目录  sudo java -jar bootdo-1.6.9.jar
+
+localhost:80 既可以访问页面
+####************************#####
+
 
 # BootDo 面向学习型的开源框架
 

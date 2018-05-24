@@ -1,0 +1,96 @@
+zzp:
+  title: 大帅哥
+  description: 哈哈哈，这是事实
+#log输出日志
+logging:
+  path: /user/local/log
+  level:
+    com:
+      favorites: debug
+    org:
+      springframework:
+        web: info
+      hibernate: error
+#数据库连接
+#mybatis:
+#  type-aliases-package: com.compont
+spring:
+  devtools:
+    restart:
+      additional-paths: #Additional paths to watch for changes
+  datasource:
+    one:
+      url: jdbc:mysql://10.1.167.25:3306/blog
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+#数据库连接2
+    two:
+      url: jdbc:mysql://10.1.167.25:3306/dbgirl
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+#hibernate映射配置
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+#redis配置
+  redis:
+#  数据库索引
+    database: 0
+#    服务器地址
+    host: 10.1.167.25
+#    服务器连接端口
+    port: 6379
+#    链接密码
+    password:
+#    链接池
+    pool:
+#    最大连接数（负值表示没有限制）
+      max-active: 8
+#      最大阻塞等待时间（负值表示没有限制）
+      max-wait: 1
+#      最大空闲链接
+      max-idle: 8
+#      最小空闲链接
+      min-idle: 0
+#    链接超时时间（毫秒）
+    timeout: 0
+  application:
+    name: MySpringBoot
+  rabbitmq:
+    host: 10.1.167.25
+    port: 5672
+    username: admin
+    password: admin
+  mail:
+    host: smtp.qq.com
+    username: 407993723@qq.com
+    password: EloveGZ0120
+#    port: 25
+#    protocol: smtp
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+info:
+  author:
+    realname: zzp
+    nickname: zhengping.zhu
+    email: zhu_zhengping@hotmail.com
+    blog:
+endpoints:
+  shutdown:
+    enabled: true
+management:
+  context-path: /manage
+  port: 9090   #-1代表关闭
+  address: 127.0.0.1

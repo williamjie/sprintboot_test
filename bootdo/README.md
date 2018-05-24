@@ -6,12 +6,18 @@ use bootdo;
 source /home/gfzhujie/zhujie/mysql/bootdo.sql
 
 ####************************#####
-mvn install  生成jar包
+mvn install  生成jar
 target 目录  sudo java -jar bootdo-1.6.9.jar
 
 localhost:80 既可以访问页面
 ####************************#####
+idea 直接运行
+server:
+  port: 8090
+ application-dev.yml 文件添加启动端口；
+ mac下面80端口无法启动；
 
+####************************#####
 
 # BootDo 面向学习型的开源框架
 
@@ -54,18 +60,18 @@ BootDo 提供了常用工具进行封装，包括日志工具、缓存工具、�
 1、后端
 
 * 核心框架：Spring Boot
-* 安全框架：Apache Shiro 
+* 安全框架：Apache Shiro
 * 模板引擎：Thymeleaf
 * 持久层框架：MyBatis
-* 数据库连接池：Alibaba Druid 
+* 数据库连接池：Alibaba Druid
 * 缓存框架：Ehcache 、Redis
-* 日志管理：SLF4J 
-* 工具类：Apache Commons、Jackson 
+* 日志管理：SLF4J
+* 工具类：Apache Commons、Jackson
 
 2、前端
 
 * JS框架：jQuery
-* 客户端验证：JQuery Validation 
+* 客户端验证：JQuery Validation
 * 富文本在线编辑：summernote
 * 数据表格：bootstrapTable
 * 弹出层：layer
@@ -93,11 +99,10 @@ BootDo 提供了常用工具进行封装，包括日志工具、缓存工具、�
 ## 交流反馈
 
 ## QQ群 669039323（满），614726589<a target="_blank" href="https://jq.qq.com/?_wv=1027&k=54UlM7d"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="BootDo交流群" title="BootDo交流群"></a>
-
 ## 版权声明
-
+##
 本软件使用 [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0) 协议，请严格遵照协议内容
-
+##
 - [x] 注：已上内容为整体规化，部分功能还在实现中
 
 如果感觉对您有帮助，请作者喝杯咖啡吧，请注明您的名字或者昵称，方便作者感谢o(*￣︶￣*)o

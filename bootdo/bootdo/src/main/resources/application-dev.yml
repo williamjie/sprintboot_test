@@ -4,6 +4,8 @@ logging:
   level:
     root: info
     com.bootdo: debug
+server:
+  port: 8090
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource

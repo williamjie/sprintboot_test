@@ -79,5 +79,17 @@ public class HelloWordController {
         session.setAttribute("uid",uid);
         return session.getId();
     }
+
+    @RequestMapping("/redis/set")
+    public ResponseModal redisSet(@RequestParam("value")String value){
+        redisService.set("name", value);
+        return new ResponseModal(200, true, "success", null);
+    }
+
+    @RequestMapping("/redis/get")
+    public ResponseModal redisGet(){
+        String name = redisService.get("name");
+        return new ResponseModal(200, true,"success",name);
+    }
 }
 

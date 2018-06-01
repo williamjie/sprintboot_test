@@ -10,6 +10,12 @@ public class TestInteger {
      * @param args
      */
     public static void main(String[] args) {
+
+        Integer i_tmp = 1;
+        int ii = 1;
+        System.out.println(i_tmp==ii);
+        System.out.println("###########");
+
         int i = 128;
         Integer i2 = 128;
         Integer i3 = new Integer(128);

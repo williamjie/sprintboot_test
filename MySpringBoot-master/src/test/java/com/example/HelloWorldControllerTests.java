@@ -10,6 +10,9 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 /**
  * Created by zhuzhengping on 2017/2/12.
  * 测试类
@@ -20,6 +23,7 @@ public class HelloWorldControllerTests {
 
     @Before
     public void setUp() {
+
         mvc = MockMvcBuilders.standaloneSetup(new HelloWordController()).build();
     }
 

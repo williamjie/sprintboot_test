@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 /**
  * Created by zhuzhengping on 2017/3/8.
@@ -15,6 +17,7 @@ import javax.annotation.Resource;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class JdbcManyDBTest {
+    private static Logger logger = LogManager.getLogger(JdbcManyDBTest.class);
 
     @Resource(name = "oneJdbcTemplate")
     protected JdbcTemplate jdbcTemplate1;
@@ -24,9 +27,13 @@ public class JdbcManyDBTest {
 
     @Test
     public void test(){
-        jdbcTemplate1.update("INSERT INTO tp_author(id,real_name,nick_name) VALUES (?,?,?)",3,"tt","tom");
+        try {
+            jdbcTemplate1.update("INSERT INTO tp_author(id,real_name,nick_name) VALUES (?,?,?)",3,"tt","tom");
 
-        jdbcTemplate1.update("INSERT INTO dbgirl.girl(id,age,cupsize) VALUES (?,?,?)",10,"88","tom");
+            jdbcTemplate1.update("INSERT INTO dbgirl.girl(id,age,cupsize) VALUES (?,?,?)",10,"88","tom");
+        } catch (Exception e){
+            logger.info("---------Exception:",e);
+        }
 
     }
 }

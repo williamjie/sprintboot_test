@@ -14,8 +14,8 @@ public class UserService {
     @Autowired
     UserInfoMapper userInfoMapper;
 
-    public void createUser(String tel,String pwd) {
-        userInfoMapper.createUser(tel,pwd);
+    public void createUser(String tel,String pwd,String nickName) {
+        userInfoMapper.createUser(tel,pwd,nickName);
     }
 
     public UserInfo getUser(Integer id) {

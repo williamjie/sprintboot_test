@@ -3,7 +3,7 @@
 <mapper namespace="com.zzp.dao.impl.MybatisUserXMLMapper">
 
 	<insert id="createUser" parameterType="java.util.Map">
-		INSERT INTO blog.tp_user(tel,password,nickname,secret) VALUES (#{tel},md5(#{pwd}),#{tel},'')
+		INSERT INTO blog.tp_user(tel,password,nickname,secret) VALUES (#{tel},md5(#{pwd}),#{nickname},'')
 	</insert>
 
 	<update id="updateUser">

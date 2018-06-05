@@ -35,8 +35,8 @@ public class UserController {
             @ApiImplicitParam(name = "pwd",value = "用户初始密码",required = true,dataType = "String")
     })
     @PostMapping("/createUser")
-    public void createUser(@RequestParam("tel") String tel, @RequestParam("pwd") String pwd){
-        userService.createUser(tel,pwd);
+    public void createUser(@RequestParam("tel") String tel, @RequestParam("pwd") String pwd,@RequestParam("nickName") String nickName){
+        userService.createUser(tel,pwd,nickName);
     }
 
     /**
@@ -51,7 +51,7 @@ public class UserController {
         if (bindingResult.hasErrors()){
             return bindingResult.getFieldError().getDefaultMessage();
         }
-        userService.createUser(userInfo.getTel(),userInfo.getPassWord());
+        userService.createUser(userInfo.getTel(),userInfo.getPassWord(),userInfo.getNickName());
         return "OK";
     }
 
@@ -92,6 +92,7 @@ public class UserController {
     public void createUserByMap(@RequestBody Map<String,Object> reqMap){
         String tel = reqMap.get("tel").toString();
         String pwd = reqMap.get("pwd").toString();
-        userService.createUser(tel,pwd);
+        String nickName = reqMap.get("nickName").toString();
+        userService.createUser(tel,pwd,nickName);
     }
 }

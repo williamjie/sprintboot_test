@@ -8,7 +8,7 @@ import com.zzp.pojo.UserInfo;
  */
 public interface UserInfoMapper {
 
-    void createUser(String tel,String pwd);
+    void createUser(String tel,String pwd,String nickName);
 
     UserInfo getUser(Integer id);
 

@@ -20,12 +20,12 @@ public class UserServiceTest {
 
     @Test
     public void createUser() throws Exception {
-        userService.createUser("13311111111","000000");
-        userService.createUser("13322222222","111111");
-        userService.createUser("13333333333","222222");
-        userService.createUser("13344444444","333333");
-        userService.createUser("13355555555","444444");
-        userService.createUser("13366666666","555555");
+        userService.createUser("13311111111","000000","nickname1");
+        userService.createUser("13322222222","111111","nickname2");
+        userService.createUser("13333333333","222222","nickname3");
+        userService.createUser("13344444444","333333","nickname4");
+        userService.createUser("13355555555","444444","nickname5");
+        userService.createUser("13366666666","555555","nickname6");
 
     }
 

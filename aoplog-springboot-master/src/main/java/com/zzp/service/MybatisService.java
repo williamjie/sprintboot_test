@@ -28,6 +28,7 @@ public class MybatisService {
     }
 
     public void createUser(Map<String, Object> reqMap) {
+        System.out.println("reqMap:"+reqMap);
         annotaionMapper.createUser(reqMap);
     }
 }

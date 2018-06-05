@@ -13,7 +13,7 @@ import java.util.Map;
 @Repository
 public interface MybatisUserAnnotaionMapper {
 
-    @Insert("INSERT INTO blog.tp_user(tel,password,nickname,secret) VALUES (#{tel},md5(#{pwd}),#{tel},'')")
+    @Insert("INSERT INTO blog.tp_user(tel,password,nickname,secret) VALUES (#{tel},md5(#{pwd}),#{nickname},'')")
     void createUser(Map<String, Object> reqMap);
 
     @Select("select tel,nickname,password FROM blog.tp_user WHERE user_id = #{id}")

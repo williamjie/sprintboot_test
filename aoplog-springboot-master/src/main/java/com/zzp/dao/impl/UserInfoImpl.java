@@ -21,8 +21,9 @@ public class UserInfoImpl implements UserInfoMapper {
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public void createUser(String tel,String pwd) {
-        jdbcTemplate.update("INSERT INTO blog.tp_user(tel,password,nickname,secret) VALUES (?,md5(?),?,'')",tel,pwd,tel);
+    public void createUser(String tel,String pwd,String nickName) {
+        System.out.println("---------tel:"+tel+" pwd:"+pwd+" nickName:"+nickName);
+        jdbcTemplate.update("INSERT INTO blog.tp_user(tel,password,nickname,secret) VALUES (?,md5(?),?,'')",tel,pwd,nickName);
     }
 
     @Override

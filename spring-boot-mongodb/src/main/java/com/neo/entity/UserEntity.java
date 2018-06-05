@@ -10,6 +10,7 @@ public class UserEntity implements Serializable {
         private Long id;
         private String userName;
         private String passWord;
+
         public Long getId() {
                 return id;
         }
@@ -41,6 +42,5 @@ public class UserEntity implements Serializable {
                         ", userName='" + userName + '\'' +
                         ", passWord='" + passWord + '\'' +
                         '}';
-
         }
 }

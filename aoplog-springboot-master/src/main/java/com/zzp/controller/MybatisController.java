@@ -2,14 +2,14 @@ package com.zzp.controller;
 
 import com.zzp.service.MybatisService;
 import com.zzp.util.ExceptionHandle;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 import com.zzp.pojo.Result;
 import com.zzp.util.ResultUtil;
 import com.zzp.pojo.UserInfo;
 import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -38,7 +38,6 @@ public class MybatisController {
      */
     @PutMapping("/updateUser/{id}")
     public Result updateUser(@PathVariable("id") String user_id, @RequestParam("nickName") String nickName){
-        //public Result updateUser(@PathVariable("id") String user_id, @RequestParam("nickName") String nickName){
         Result result = ResultUtil.success();
         try {
             service.updateUser(user_id,nickName);

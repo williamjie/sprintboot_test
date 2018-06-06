@@ -1,0 +1,12 @@
+mac配置完ssh依然提示"Enter passphrase for key"解决方法
+
+ 
+使用Git，每次都提示输入命令。 
+这个问题折磨很久，明明已经配置过ssh了，可是每次还要提示输入密码，从网上查查，最后一条命令解决问题： 
+问题提示：
+
+Enter passphrase for key 'xxxx'
+输入一下命令：
+
+ssh-add -K xxx
+之后就再也没遇到这种问题。

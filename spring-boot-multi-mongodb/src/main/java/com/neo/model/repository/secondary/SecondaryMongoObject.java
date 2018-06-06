@@ -19,7 +19,17 @@ public class SecondaryMongoObject {
 	private String id;
 
 	private String value;
+    /*
+	public SecondaryMongoObject(String tmpId,String tmpValue){
+		if (id != null){
+			id = tmpId;
+		}
 
+		if (tmpValue != null){
+			value = tmpValue;
+		}
+
+	}*/
 
 	@Override
 	public String toString() {

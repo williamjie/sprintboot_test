@@ -19,6 +19,17 @@ public class PrimaryMongoObject {
 	private String id;
 
 	private String value;
+	/*
+	public PrimaryMongoObject(String tmpId,String tmpValue){
+		if (id != null){
+			id = tmpId;
+		}
+
+		if (tmpValue != null){
+			value = tmpValue;
+		}
+
+	}*/
 
 	@Override
 	public String toString() {

@@ -52,14 +52,13 @@ public class DemoController {
         return user.toString();
     } //localhost:9090/hello?id=1000
 
-    /*
-    @RequestMapping(value = "/test",method = RequestMethod.POST)
-    public void demoTest(){
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
+    public String demoTest(){
+        return "Hello World";
 
-        System.out.print("demoTest------------");
-        UserEntity user= userDao.findUserByUserName("小明");
+        //System.out.print("demoTest------------");
+        //UserEntity user= userDao.findUserByUserName("小明");
         //redisService.saveUser("1","value22222");
     }
-    */
 
 }

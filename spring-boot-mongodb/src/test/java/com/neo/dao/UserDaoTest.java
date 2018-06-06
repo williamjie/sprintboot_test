@@ -22,7 +22,7 @@ public class UserDaoTest {
     public void testSaveUser() throws Exception {
         UserEntity user=new UserEntity();
         user.setId(2l);
-        user.setUserName("小明");
+        user.setUserName("小明1");
         user.setPassWord("fffooo123");
         userDao.saveUser(user);
     }

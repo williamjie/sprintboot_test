@@ -48,11 +48,9 @@
       <file leaf-file-name="DemoControllerTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/neo/contoller/DemoControllerTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5062241">
-              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.21161826">
+              <caret line="6" column="51" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="51" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1050,7 +1048,7 @@
       <workItem from="1528187632558" duration="192000" />
       <workItem from="1528187879291" duration="351000" />
       <workItem from="1528188532514" duration="579000" />
-      <workItem from="1528228848954" duration="5025000" />
+      <workItem from="1528228848954" duration="5298000" />
     </task>
     <servers />
   </component>
@@ -1081,7 +1079,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13767000" />
+    <option name="totallyTimeSpent" value="14040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-85" y="-971" width="1401" height="912" extended-state="0" />
@@ -1432,11 +1430,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/neo/contoller/DemoControllerTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5062241">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.21161826">
+          <caret line="6" column="51" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>

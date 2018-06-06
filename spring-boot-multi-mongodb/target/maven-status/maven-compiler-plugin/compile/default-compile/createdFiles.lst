@@ -1,0 +1,9 @@
+com/neo/model/repository/secondary/SecondaryMongoObject.class
+com/neo/config/MultipleMongoConfig.class
+com/neo/config/SecondaryMongoConfig.class
+com/neo/config/PrimaryMongoConfig.class
+com/neo/Application.class
+com/neo/config/props/MultipleMongoProperties.class
+com/neo/model/repository/primary/PrimaryMongoObject.class
+com/neo/model/repository/primary/PrimaryRepository.class
+com/neo/model/repository/secondary/SecondaryRepository.class

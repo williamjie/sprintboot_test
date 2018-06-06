@@ -24,3 +24,13 @@ demotest:log日志,每日切割；health 检查；http方式web请求；
 #### via jreds 获取redis信息以及数据
 
 ##### soplog-springboot-master:面先切面aop 返回前端错误码以及 log日志记录错误
+
+
+
+##### spring-boot-multi-mongodb  多mongdb获取信息
+
+
+
+
+
+

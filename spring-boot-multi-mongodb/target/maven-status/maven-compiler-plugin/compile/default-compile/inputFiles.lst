@@ -1,0 +1,9 @@
+/Users/zj/Documents/company_code/IdeaProjects/spring-boot-multi-mongodb/src/main/java/com/neo/config/props/MultipleMongoProperties.java
+/Users/zj/Documents/company_code/IdeaProjects/spring-boot-multi-mongodb/src/main/java/com/neo/model/repository/secondary/SecondaryMongoObject.java
+/Users/zj/Documents/company_code/IdeaProjects/spring-boot-multi-mongodb/src/main/java/com/neo/config/MultipleMongoConfig.java
+/Users/zj/Documents/company_code/IdeaProjects/spring-boot-multi-mongodb/src/main/java/com/neo/model/repository/primary/PrimaryRepository.java
+/Users/zj/Documents/company_code/IdeaProjects/spring-boot-multi-mongodb/src/main/java/com/neo/config/SecondaryMongoConfig.java
+/Users/zj/Documents/company_code/IdeaProjects/spring-boot-multi-mongodb/src/main/java/com/neo/model/repository/primary/PrimaryMongoObject.java
+/Users/zj/Documents/company_code/IdeaProjects/spring-boot-multi-mongodb/src/main/java/com/neo/Application.java
+/Users/zj/Documents/company_code/IdeaProjects/spring-boot-multi-mongodb/src/main/java/com/neo/model/repository/secondary/SecondaryRepository.java
+/Users/zj/Documents/company_code/IdeaProjects/spring-boot-multi-mongodb/src/main/java/com/neo/config/PrimaryMongoConfig.java

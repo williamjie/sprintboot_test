@@ -1,0 +1,9 @@
+mongodb:
+  primary:
+    host: 10.1.167.25
+    port: 27017
+    database: mgofir
+  secondary:
+    host: 10.1.167.25
+    port: 27017
+    database: mogsec

@@ -30,19 +30,21 @@ public class MultipleMongoConfig {
 	@Bean
 	@Qualifier(SecondaryMongoConfig.MONGO_TEMPLATE)
 	public MongoTemplate secondaryMongoTemplate() throws Exception {
-        return new MongoTemplate(secondaryFactory(this.mongoProperties.getSecondary()));
+
+		return new MongoTemplate(secondaryFactory(this.mongoProperties.getSecondary()));
+
 	}
 
 	@Bean
     @Primary
-	public MongoDbFactory primaryFactory(MongoProperties mongo) throws Exception {
-		return new SimpleMongoDbFactory(new MongoClient(mongo.getHost(), mongo.getPort()),
-				mongo.getDatabase());
+	public MongoDbFactory primaryFactory(MongoProperties mongo1) throws Exception {
+		return new SimpleMongoDbFactory(new MongoClient(mongo1.getHost(), mongo1.getPort()),mongo1.getDatabase());
+
 	}
 
 	@Bean
 	public MongoDbFactory secondaryFactory(MongoProperties mongo) throws Exception {
-		return new SimpleMongoDbFactory(new MongoClient(mongo.getHost(), mongo.getPort()),
-				mongo.getDatabase());
+		return new SimpleMongoDbFactory(new MongoClient(mongo.getHost(), mongo.getPort()), mongo.getDatabase());
+
 	}
 }

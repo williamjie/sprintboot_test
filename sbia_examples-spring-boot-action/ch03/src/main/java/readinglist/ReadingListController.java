@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class ReadingListController {
 
 	private ReadingListRepository readingListRepository;
-  private AmazonProperties amazonConfig;
+	private AmazonProperties amazonConfig;
 
 	@Autowired
 	public ReadingListController(ReadingListRepository readingListRepository,

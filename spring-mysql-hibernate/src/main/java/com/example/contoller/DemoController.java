@@ -5,33 +5,63 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
 
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import com.example.dao.Dao;
 import com.example.dao.Person;
+import lombok.extern.log4j.Log4j2;
 
-
+@Log4j2
 @RestController
 public class DemoController {
     @Autowired
     Dao dao;
-
+    
+    //private static final Logger logger = LogManager.getLogger(DemoController.class);
+    
     @RequestMapping(value="/get",method= RequestMethod.GET)
     public Person getP(String name){
         Person person = dao.findByName(name).get(0);
         return person;
     }
 
-    @RequestMapping(value="/setname",method= RequestMethod.POST)
-    public String setP(@RequestParam(value="name",required=false) String name,@RequestParam(value="addr",required=false) String addr){
+
+    @PostMapping("/setname")
+    public String setname(@RequestBody Person json_data){
+        log.debug("name:",json_data.getName());
+        log.debug("addr:",json_data.getAddress());
+        log.debug("id:",json_data.getId());
+
         Person person = new Person();
-        person.setName(name);
-        person.setAddress(addr);
+        person.setName(json_data.getName());
+        person.setAddress(json_data.getAddress());
         dao.save(person);//实现数据更新
         return "insert into mysql success";
+    }
+
+    @RestController
+    public class HelloController {
+        @RequestMapping(value="/HelloController",method= RequestMethod.GET)
+        //required=false 表示url中可以不穿入id参数，此时就使用默认参数
+        public String sayHello(@RequestParam(value="id",required = false,defaultValue = "1") Integer id){
+            return "id:"+id;
+        }
+    }
+
+    @RequestMapping(value = "/viewDetail")
+    @ResponseBody
+    public String addQuestion(@RequestBody Map<String,Object> params){
+        //String loanOrderNbr = params.get("loanOrderNbr").toString();
+        return "ok";
     }
 
     @RequestMapping(value="/hello",method= RequestMethod.GET)

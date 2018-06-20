@@ -18,15 +18,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.example.dao.Dao;
 import com.example.dao.Person;
-import lombok.extern.log4j.Log4j2;
 
-@Log4j2
 @RestController
 public class DemoController {
     @Autowired
     Dao dao;
     
-    //private static final Logger logger = LogManager.getLogger(DemoController.class);
+    private static final Logger logger = LogManager.getLogger(DemoController.class);
     
     @RequestMapping(value="/get",method= RequestMethod.GET)
     public Person getP(String name){
@@ -37,9 +35,18 @@ public class DemoController {
 
     @PostMapping("/setname")
     public String setname(@RequestBody Person json_data){
-        log.debug("name:",json_data.getName());
-        log.debug("addr:",json_data.getAddress());
-        log.debug("id:",json_data.getId());
+        logger.trace("test trace level");
+        logger.debug("test debug level");
+        logger.info("test info level");
+        logger.warn("test warn level");
+        logger.error("test error level");
+        logger.fatal("test fatal level-----------------\n");
+        String name = "test name:" + json_data.getName();
+        logger.info(name);
+        String addr = "test addr:" + json_data.getAddress();
+        logger.info(addr);
+        String id = "test id:" + json_data.getId();
+        logger.info(id);
 
         Person person = new Person();
         person.setName(json_data.getName());

@@ -237,3 +237,20 @@
 2018-06-20 13:23:54.695  INFO 69703 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
 2018-06-20 13:23:54.840  INFO 69703 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
 2018-06-20 13:23:54.847  INFO 69703 --- [main] c.e.SpringMysqlHibernateApplication      : Started SpringMysqlHibernateApplication in 17.298 seconds (JVM running for 20.091)
+2018-06-20 13:54:36.291  INFO 69703 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-20 13:54:36.295  INFO 69703 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-06-20 13:54:36.372  INFO 69703 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 75 ms
+2018-06-20 13:54:36.740  INFO 69703 --- [http-nio-9090-exec-1] com.example.contoller.DemoController     : test info level
+2018-06-20 13:54:36.740  WARN 69703 --- [http-nio-9090-exec-1] com.example.contoller.DemoController     : test warn level
+2018-06-20 13:54:36.741 ERROR 69703 --- [http-nio-9090-exec-1] com.example.contoller.DemoController     : test error level
+2018-06-20 13:54:36.741 ERROR 69703 --- [http-nio-9090-exec-1] com.example.contoller.DemoController     : test fatal level-----------------
+
+2018-06-20 13:54:36.741  INFO 69703 --- [http-nio-9090-exec-1] com.example.contoller.DemoController     : test name:zj
+2018-06-20 13:54:36.742  INFO 69703 --- [http-nio-9090-exec-1] com.example.contoller.DemoController     : test addr:99999
+2018-06-20 13:54:36.742  INFO 69703 --- [http-nio-9090-exec-1] com.example.contoller.DemoController     : test id:222222222
+2018-06-20 13:54:41.848  INFO 69703 --- [Thread-3] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6f79caec: startup date [Wed Jun 20 13:23:40 HKT 2018]; root of context hierarchy
+2018-06-20 13:54:41.853  INFO 69703 --- [Thread-3] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-06-20 13:54:41.855  INFO 69703 --- [Thread-3] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-06-20 13:54:41.858  INFO 69703 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-20 13:54:41.861  INFO 69703 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-06-20 13:54:41.870  INFO 69703 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

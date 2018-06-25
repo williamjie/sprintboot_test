@@ -23,9 +23,9 @@ import com.example.dao.Person;
 public class DemoController {
     @Autowired
     Dao dao;
-    
+
     private static final Logger logger = LogManager.getLogger(DemoController.class);
-    
+
     @RequestMapping(value="/get",method= RequestMethod.GET)
     public Person getP(String name){
         Person person = dao.findByName(name).get(0);

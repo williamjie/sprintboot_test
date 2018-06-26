@@ -1,0 +1,55 @@
+
+架构设计原则
+https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651960945&idx=1&sn=d08f33c5f317fee8956252da8e0236b6&chksm=bd2d03ad8a5a8abb0370b826b7384a4095a5ed36238f0911d102b0ceee8e5d2fbe3bc80c56d9&scene=38#wechat_redirect 
+架构师之路17年精选80篇
+
+https://github.com/williamjie/architect-awesome 
+《后端架构师技术图谱》
+
+
+框架
+你对Spring的理解？
+spring 是一个 轻量级的 实现IOC 和 AOP的框架
+么IOC？--> 为什么要IOC-->控制反转 是控制了谁对谁的反转?-->IOC容器完成了哪些事情-->做的这些事情与工厂模式有什么异同。
+什么是AOP？--> 能做什么--> 一个简单的AOP打算怎么实现?
+spring 的IOC除了做了bean实例化，还做了注入，注入可以对哪些要素进行注入？比如对字段注入，还可以对哪些要素注入？
+除了做了实例化 与 注入 spring的IOC还干些什么事，让你在用IOC时更优雅？
+如果让你做这个IOC，结合自己的思考或者曾经参与过的项目/产品 需要，你打算再做些什么设计能让使用者更优雅的使用?
+除了spring实现了IOC 还了解过什么框架(或者框架内部)也实现了IOC？
+spring与其他框架对接时，是怎么将IOC的容器中的bean交与其他框架使用的？比如对接struts2或者JUint 或者dubbo。
+BeanFactory 和 ApplicationContext 有什么区别
+Spring Bean 的生命周期
+Spring IOC 如何实现
+说说 Spring AOP
+Spring AOP 实现原理
+动态代理（cglib 与 JDK）
+Spring 事务实现方式
+Spring 事务底层原理
+如何自定义注解实现功能
+Spring MVC 运行流程
+Spring MVC 启动流程
+Spring 的单例实现原理
+Spring 框架中用到了哪些设计模式
+Spring 其他产品（Srping Boot、Spring Cloud、Spring Secuirity、Spring Data、Spring AMQP 等）
+https://mp.weixin.qq.com/s/qLnHqK6AKCoFHBlPdablxw（Spring MVC & Boot & Cloud 技术教程汇总（长期更新） ）
+
+微服务篇微服务
+前后端分离是如何做的
+微服务哪些框架
+你怎么理解 RPC 框架
+说说 RPC 的实现原理
+说说 Dubbo 的实现原理
+你怎么理解 RESTful
+说说如何设计一个良好的 API
+如何理解 RESTful API 的幂等性
+如何保证接口的幂等性
+说说 CAP 定理、 BASE 理论
+怎么考虑数据一致性问题
+说说最终一致性的实现方案
+你怎么看待微服务
+微服务与 SOA 的区别
+如何拆分服务
+微服务如何进行数据库管理
+如何应对微服务的链式调用异常
+对于快速追踪与定位问题
+微服务的安全

@@ -2,8 +2,11 @@
 Java基础
 1、ArrayList和LinkedList  HashSet和TreeSet类  HashMap和TreeMap各个的异同
 ArrayList实现了List接口,它是以数组的方式来实现的,数组的特性是可以使用索引的方式来快速定位对象的位置,因此对于快速的随机取得对象的需求,使用ArrayList实现执行效率上会比较好.
+
 LinkedList是采用链表的方式来实现List接口的,它本身有自己特定的方法 如:addFirst(),addLast(),getFirst(),removeFirst()等. 由于是采用链表实现的,因此在进行insert和remove动作时在效率上要比ArrayList要好得多!适合用来实现Stack(堆栈)与Queue(队列),前者先进后出，后者是先进先出.
+
 HashSet与TreeSet的使用场景 HashSet：哈希表是通过使用称为散列法的机制来存储信息的，元素并没有以某种特定顺序来存放 TreeSet：提供一个使用树结构存储Set接口的实现(红黑树算法)，对象以升序顺序存储，访问和遍历的时间很快。 使用场景:HashSet是基于Hash算法实现的，其性能通常都优于TreeSet。我们通常都应该使用HashSet，在我们需要排序的功能时，我们才使用TreeSet。 
+
 HashMap 以及TreeMap :HashMap通过hashcode对其内容进行快速查找，而 TreeMap中所有的元素都保持着某种固定的顺序，如果你需要得到一个有序的结果你就应该使用TreeMap（HashMap中元素的排列顺序是不固定的）。 使用场景 HashMap:适用于在Map中插入、删除和定位元素。 Treemap:适用于按自然顺序或自定义顺序遍历键（key） 
 2.Java 中extends与implements  通过关键字extends来创建一个类的子类。一个类通过关键字implements声明自己使用一个或者多个接口。extends 是继承某个类, 继承之后可以使用父类的方法, 也可以重写父类的方法;implements 是实现多个接口, 接口的方法一般为空的, 必须重写才能使用
 final:凡是对成员变量或者本地变量(在方法中的或者代码块中的变量称为本地变量)声明为final的都叫作final变量。final变量经常和static关键字一起使用，作为常量，final 变量是只读的。

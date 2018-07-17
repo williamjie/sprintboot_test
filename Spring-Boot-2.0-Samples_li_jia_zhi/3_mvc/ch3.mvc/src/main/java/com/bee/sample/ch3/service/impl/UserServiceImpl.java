@@ -14,8 +14,6 @@ public class UserServiceImpl implements UserService {
 	public List<User> allUser() {
 		return sampleUser(5);
 	}
-	
-	
 
 	public User getUserById(Long id) {
 		User user = sampleUser(1).get(0);
@@ -23,7 +21,6 @@ public class UserServiceImpl implements UserService {
 		return user;
 	}
 
-	
 	private List<User> sampleUser(int num){
 		List<User> list = new ArrayList<User>(num);
 		for(int i=0;i<num;i++){
@@ -38,6 +35,5 @@ public class UserServiceImpl implements UserService {
 
 	public void updateUser(Long id, Integer type) {
 		// TODO Auto-generated method stub
-		
 	}
 }

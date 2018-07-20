@@ -1,7 +1,4 @@
-mysql 索引
-
-
-mysql
+mysql 索引  主要使用BTree索引 和哈希索引
 
 
 

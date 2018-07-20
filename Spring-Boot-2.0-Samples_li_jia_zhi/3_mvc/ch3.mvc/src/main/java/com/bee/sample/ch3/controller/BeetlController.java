@@ -20,13 +20,13 @@ import com.bee.sample.ch3.service.UserService;
 @RequestMapping("/beetl")
 public class BeetlController {
 	@Autowired UserService userService;
-	
+
 	@RequestMapping("/index.html")
 	public  String say(Model model){
 		model.addAttribute("name","hello,world");
 		return "/index.btl";
 	}
-	
+
 	@GetMapping("/showuser.html")
 	public ModelAndView showUserInfo(Long id){
 		ModelAndView view = new ModelAndView();
@@ -35,6 +35,5 @@ public class BeetlController {
 		view.setViewName("/userInfo.btl");
 		return view;
 	}
-	
 
 }

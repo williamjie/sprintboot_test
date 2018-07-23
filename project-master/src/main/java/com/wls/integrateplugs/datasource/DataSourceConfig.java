@@ -19,6 +19,7 @@ public class DataSourceConfig {
     public DataSource primaryDataSource() {
         return DataSourceBuilder.create().build();
     }
+
     @Bean(name = "secondaryDataSource")
     @Qualifier("secondaryDataSource")
     @Primary

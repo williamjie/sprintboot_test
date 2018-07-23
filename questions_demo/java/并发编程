@@ -1,4 +1,58 @@
 
+
+
+Java 并发 
+1、synchronized 的实现原理以及锁优化？ 
+2、volatile 的实现原理？  
+我们了解了synchronized是一个重量级的锁，虽然JVM对它做了很多优化，而下面介绍的volatile则是轻量级的synchronized。如果一个变量使用volatile，则它比使用synchronized的成本更加低，因为它不会引起线程上下文的切换和调度
+3、Java 的信号灯？ 
+4、synchronized 在静态方法和普通方法的区别？ 
+5、怎么实现所有线程在等待某个事件的发生才会去执行？ 
+6、CAS？CAS 有什么缺陷，如何解决？ 
+7、synchronized 和 lock 有什么区别？ 
+8、Hashtable 是怎么加锁的 ？ 
+9、HashMap 的并发问题？ 
+10、ConcurrenHashMap 介绍？1.8 中为什么要用红黑树？ 
+11、AQS 
+12、如何检测死锁？怎么预防死锁？ 
+13、Java 内存模型？ 
+14、如何保证多线程下 i++ 结果正确？ 
+15、线程池的种类，区别和使用场景？ 
+16、分析线程池的实现原理和线程的调度过程？ 
+17、线程池如何调优，最大数目如何确认？ 
+18、ThreadLocal原理，用的时候需要注意什么？ 
+19、CountDownLatch 和 CyclicBarrier 的用法，以及相互之间的差别? 
+20、LockSupport工具 
+21、Condition接口及其实现原理 
+22、Fork/Join框架的理解 
+23、分段锁的原理,锁力度减小的思考 
+24、八种阻塞队列以及各个阻塞队列的特性
+线程
+创建线程的方式及实现
+sleep() 、join（）、yield（）有什么区别
+说说 CountDownLatch 原理
+说说 CyclicBarrier 原理
+说说 Semaphore 原理
+说说 Exchanger 原理
+说说 CountDownLatch 与 CyclicBarrier 区别
+ThreadLocal 原理分析
+讲讲线程池的实现原理
+线程池的几种方式
+线程的生命周期
+锁机制
+说说线程安全问题
+volatile 实现原理
+synchronize 实现原理：JDK 5之前Java语言是靠synchronized关键字保证同步的，这是一种独占锁，也是是悲观锁。
+CAS 乐观锁：其下面的类使用CAS算法实现了区别于synchronouse同步锁的一种乐观锁
+ABA 问题
+乐观锁的业务场景及实现方式
+
+
+
+
+
+
+
 在并发编程中，我们通常会遇到以下三个问题：原子性问题，可见性问题，有序性问题。我们先看具体看一下这三个概念：
 
 原子性：是指一个操作是不可中断的，要么全部执行成功要么全部执行失败，有着“同生共死”的感觉。及时在多个线程一起执行的时候，一个操作一旦开始，就不会被其他线程所干扰。
@@ -20,11 +74,43 @@ volatile：具有有序性和可见性
 
 
 
+happens-before规则
+
+总共有六条规则：
+
+程序顺序规则：一个线程中的每个操作，happens-before于随后该线程中的任意后续操作
+监视器锁规则：对一个锁的解锁，happens-before于随后对这个锁的获取
+volatile变量规则：对一个volatile域的写，happens-before于对这个变量的读
+传递性：如果A happens-before B，B happens-before C，那么A happens-before C
+start规则：如果线程A执行线程B的start方法，那么线程A的ThreadB.start()happens-before于线程B的任意操作
+join规则：如果线程A执行线程B的join方法，那么线程B的任意操作happens-before于线程A从TreadB.join()方法成功返回。
+
+
+
+什么是CAS?
+使用锁时，线程获取锁是一种悲观锁策略，即假设每一次执行临界区代码都会产生冲突，所以当前线程获取到锁的时候同时也会阻塞其他线程获取该锁。而CAS操作（又称为无锁操作）是一种乐观锁策略，它假设所有线程访问共享资源的时候不会出现冲突，既然不会出现冲突自然而然就不会阻塞其他线程的操作。因此，线程就不会出现阻塞停顿的状态。那么，如果出现冲突了怎么办？无锁操作是使用CAS(compare and swap)又叫做比较交换来鉴别线程是否出现冲突，出现冲突就重试当前操作直到没有冲突为止。
 
 
 
 
 
+Netty
+1、BIO、NIO和AIO
+2、Netty 的各大组件
+3、Netty的线程模型
+4、TCP 粘包/拆包的原因及解决方法
+5、了解哪几种序列化协议？包括使用场景和如何去选择
+6、Netty的零拷贝实现
+7、Netty的高性能表现在哪些方面
+为什么选择 Netty
+说说业务中，Netty 的使用场景
+原生的 NIO 在 JDK 1.7 版本存在 epoll bug
+什么是TCP 粘包/拆包
+TCP粘包/拆包的解决办法
+Netty 线程模型
+说说 Netty 的零拷贝
+Netty 内部执行流程
+Netty 重连实现
 
 
 

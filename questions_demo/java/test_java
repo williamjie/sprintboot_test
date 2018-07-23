@@ -261,12 +261,15 @@ HashMap：基于哈希表实现。使用HashMap要求添加的键类明确定义
 TreeMap：非线程安全基于红黑树实现。TreeMap没有调优选项，因为该树总处于平衡状态。 
 适用场景分析：
 HashMap和HashTable:HashMap去掉了HashTable的contains方法，但是加上了containsValue()和containsKey()方法。HashTable同步的，而HashMap是非同步的，效率上比HashTable要高。HashMap允许空键值，而HashTable不允许。
-HashMap：适用于Map中插入、删除和定位元素。 
-Treemap：适用于按自然顺序或自定义顺序遍历键(key)。 
- 
+HashMap：适用于Map中插入、删除和定位元素。
+Treemap：适用于按自然顺序或自定义顺序遍历键(key)。
+
 33、HashMap非线程安全
 HashMap的结构就是哈希表，底层是一个数组，这个数组中尽可能地分散所有的key，通过key的hash值得到数组下标，然后把entry插到该数组，假如有两个不同的key被分到相同的下标，也就是哈希冲突，那么该数组在该下标下就会形成链表。
+
 34、为了减少冲突，我们需要时刻留意当前的size是否太大，检查是否需要扩容，一旦超过设定的threshold，那么就要重新增大数组尺寸，此时所有元素都需要重新计算应该放置的下标。
+
+
 35、HashMap 和 ConcurrentHashMap 的区别、HashMap 和 Hashtable 的区别
 并发场景、并发场景
 36、HashMap 的工作原理及代码实现
@@ -288,13 +291,16 @@ a.  面试题：List 和 Set 的区别（ 换一种说法你说说collection里�
 List：1.可以允许重复的对象。　　  2.可以插入多个null元素。        3.是一个有序容器，保持了每个元素的插入顺序，输出的顺序就是插入的顺序。        4.常用的实现类有 ArrayList、LinkedList 和 Vector。ArrayList 最为流行，它提供了使用索引的随意访问，而 LinkedList 则对于经常需要从 List 中添加或删除元素的场合更为合适。
 Set：1.不允许重复对象　　   2. 无序容器，你无法保证每个元素的存储顺序，TreeSet通过 Comparator  或者 Comparable 维护了一个排序顺序。        3. 只允许一个 null 元素        4.Set 接口最流行的几个实现类是 HashSet、LinkedHashSet 以及 TreeSet。最流行的是基于 HashMap 实现的 HashSet；TreeSet 还实现了 SortedSet 接口，因此 TreeSet 是一个根据其 compare() 和 compareTo() 的定义进行排序的有序容器。
 Map不是collection的子接口或者实现类。Map是一个接口。2.Map 的 每个 Entry 都持有两个对象，也就是一个键一个值，Map 可能会持有相同的值对象但键对象必须是唯一的。3. TreeMap 也通过 Comparator  或者 Comparable 维护了一个排序顺序。4. Map 里你可以拥有随意个 null 值但最多只能有一个 null 键。5.Map 接口最流行的几个实现类是 HashMap、LinkedHashMap、Hashtable 和 TreeMap。（HashMap、TreeMap最常用）
-b.面试题：什么场景下使用list，set，map呢？（或者会问为什么这里要用list、或者set、map，这里回答它们的优缺点就可以了）答：
-如果你经常会使用索引来对容器中的元素进行访问，那么 List 是你的正确的选择。如果你已经知道索引了的话，那么 List 的实现类比如 ArrayList 可以提供更快速的访问,如果经常添加删除元素的，那么肯定要选择LinkedList。
+
+b.面试题：什么场景下使用list，set，map呢？（或者会问为什么这里要用list、或者set、map，这里回答它们的优缺点就可以了）
+
+答：如果你经常会使用索引来对容器中的元素进行访问，那么 List 是你的正确的选择。如果你已经知道索引了的话，那么 List 的实现类比如 ArrayList 可以提供更快速的访问,如果经常添加删除元素的，那么肯定要选择LinkedList。
 如果你想容器中的元素能够按照它们插入的次序进行有序存储，那么还是 List，因为 List 是一个有序容器，它按照插入顺序进行存储。
+
 如果你想保证插入元素的唯一性，也就是你不想有重复值的出现，那么可以选择一个 Set 的实现类，比如 HashSet、LinkedHashSet 或者 TreeSet。所有 Set 的实现类都遵循了统一约束比如唯一性，而且还提供了额外的特性比如 TreeSet 还是一个 SortedSet，所有存储于 TreeSet 中的元素可以使用 Java 里的 Comparator 或者 Comparable 进行排序。LinkedHashSet 也按照元素的插入顺序对它们进行存储。
 如果你以键和值的形式进行数据存储那么 Map 是你正确的选择。你可以根据你的后续需要从 Hashtable、HashMap、TreeMap 中进行选择。
 
- 
+
 有序否
 允许元素重复否
 Collection
@@ -338,73 +344,4 @@ https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247485731&idx=2&sn=be9285
 
 
 
-
-
-
-
-Java 并发 
-1、synchronized 的实现原理以及锁优化？ 
-2、volatile 的实现原理？  
-我们了解了synchronized是一个重量级的锁，虽然JVM对它做了很多优化，而下面介绍的volatile则是轻量级的synchronized。如果一个变量使用volatile，则它比使用synchronized的成本更加低，因为它不会引起线程上下文的切换和调度
-3、Java 的信号灯？ 
-4、synchronized 在静态方法和普通方法的区别？ 
-5、怎么实现所有线程在等待某个事件的发生才会去执行？ 
-6、CAS？CAS 有什么缺陷，如何解决？ 
-7、synchronized 和 lock 有什么区别？ 
-8、Hashtable 是怎么加锁的 ？ 
-9、HashMap 的并发问题？ 
-10、ConcurrenHashMap 介绍？1.8 中为什么要用红黑树？ 
-11、AQS 
-12、如何检测死锁？怎么预防死锁？ 
-13、Java 内存模型？ 
-14、如何保证多线程下 i++ 结果正确？ 
-15、线程池的种类，区别和使用场景？ 
-16、分析线程池的实现原理和线程的调度过程？ 
-17、线程池如何调优，最大数目如何确认？ 
-18、ThreadLocal原理，用的时候需要注意什么？ 
-19、CountDownLatch 和 CyclicBarrier 的用法，以及相互之间的差别? 
-20、LockSupport工具 
-21、Condition接口及其实现原理 
-22、Fork/Join框架的理解 
-23、分段锁的原理,锁力度减小的思考 
-24、八种阻塞队列以及各个阻塞队列的特性
-线程
-创建线程的方式及实现
-sleep() 、join（）、yield（）有什么区别
-说说 CountDownLatch 原理
-说说 CyclicBarrier 原理
-说说 Semaphore 原理
-说说 Exchanger 原理
-说说 CountDownLatch 与 CyclicBarrier 区别
-ThreadLocal 原理分析
-讲讲线程池的实现原理
-线程池的几种方式
-线程的生命周期
-锁机制
-说说线程安全问题
-volatile 实现原理
-synchronize 实现原理：JDK 5之前Java语言是靠synchronized关键字保证同步的，这是一种独占锁，也是是悲观锁。
-CAS 乐观锁：其下面的类使用CAS算法实现了区别于synchronouse同步锁的一种乐观锁
-ABA 问题
-乐观锁的业务场景及实现方式
-
-
-
-Netty
-1、BIO、NIO和AIO
-2、Netty 的各大组件
-3、Netty的线程模型
-4、TCP 粘包/拆包的原因及解决方法
-5、了解哪几种序列化协议？包括使用场景和如何去选择
-6、Netty的零拷贝实现
-7、Netty的高性能表现在哪些方面
-为什么选择 Netty
-说说业务中，Netty 的使用场景
-原生的 NIO 在 JDK 1.7 版本存在 epoll bug
-什么是TCP 粘包/拆包
-TCP粘包/拆包的解决办法
-Netty 线程模型
-说说 Netty 的零拷贝
-Netty 内部执行流程
-Netty 重连实现
 

@@ -1,0 +1,6 @@
+Spring Boot之JdbcTemplate多数据源配置与使用
+
+
+之前在介绍使用JdbcTemplate和Spring-data-jpa时，都使用了单数据源。在单数据源的情况下，Spring Boot的配置非常简单，只需要在application.properties文件中配置连接参数即可。但是往往随着业务量发展，我们通常会进行数据库拆分或是引入其他数据库，从而我们需要配置多个数据源，下面基于之前的JdbcTemplate和Spring-data-jpa例子分别介绍两种多数据源的配置方式。
+
+https://www.cnblogs.com/williamjie/p/9355899.html

@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.222.128:3306/db1
+#    url: jdbc:mysql://192.168.11.131:3306/mydb
+    username: wls
+    password: Wls141215!
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+

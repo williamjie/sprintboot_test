@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cassandra/example/spring-data-cassandra-example.iml" filepath="$PROJECT_DIR$/cassandra/example/spring-data-cassandra-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cassandra/util/spring-data-cassandra-example-utils.iml" filepath="$PROJECT_DIR$/cassandra/util/spring-data-cassandra-example-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cassandra/spring-data-cassandra-examples.iml" filepath="$PROJECT_DIR$/cassandra/spring-data-cassandra-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cassandra/java8/spring-data-cassandra-java8.iml" filepath="$PROJECT_DIR$/cassandra/java8/spring-data-cassandra-java8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cassandra/reactive/spring-data-cassandra-reactive.iml" filepath="$PROJECT_DIR$/cassandra/reactive/spring-data-cassandra-reactive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/couchbase/example/spring-data-couchbase-example.iml" filepath="$PROJECT_DIR$/couchbase/example/spring-data-couchbase-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/couchbase/util/spring-data-couchbase-example-utils.iml" filepath="$PROJECT_DIR$/couchbase/util/spring-data-couchbase-example-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/couchbase/spring-data-couchbase-examples.iml" filepath="$PROJECT_DIR$/couchbase/spring-data-couchbase-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/couchbase/reactive/spring-data-couchbase-reactive.iml" filepath="$PROJECT_DIR$/couchbase/reactive/spring-data-couchbase-reactive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/elasticsearch/example/spring-data-elasticsearch-example.iml" filepath="$PROJECT_DIR$/elasticsearch/example/spring-data-elasticsearch-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/elasticsearch/spring-data-elasticsearch-examples.iml" filepath="$PROJECT_DIR$/elasticsearch/spring-data-elasticsearch-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-data-examples.iml" filepath="$PROJECT_DIR$/spring-data-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bom/spring-data-examples-bom.iml" filepath="$PROJECT_DIR$/bom/spring-data-examples-bom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdbc/basics/spring-data-jdbc-basics.iml" filepath="$PROJECT_DIR$/jdbc/basics/spring-data-jdbc-basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdbc/spring-data-jdbc-examples.iml" filepath="$PROJECT_DIR$/jdbc/spring-data-jdbc-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdbc/mybatis/spring-data-jdbc-mybatis.iml" filepath="$PROJECT_DIR$/jdbc/mybatis/spring-data-jdbc-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa/eclipselink/spring-data-jpa-eclipselink.iml" filepath="$PROJECT_DIR$/jpa/eclipselink/spring-data-jpa-eclipselink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa/example/spring-data-jpa-example.iml" filepath="$PROJECT_DIR$/jpa/example/spring-data-jpa-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa/spring-data-jpa-examples.iml" filepath="$PROJECT_DIR$/jpa/spring-data-jpa-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa/interceptors/spring-data-jpa-interceptors.iml" filepath="$PROJECT_DIR$/jpa/interceptors/spring-data-jpa-interceptors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa/java8/spring-data-jpa-java8.iml" filepath="$PROJECT_DIR$/jpa/java8/spring-data-jpa-java8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa/jpa21/spring-data-jpa-jpa21.iml" filepath="$PROJECT_DIR$/jpa/jpa21/spring-data-jpa-jpa21.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa/multiple-datasources/spring-data-jpa-multiple-datasources.iml" filepath="$PROJECT_DIR$/jpa/multiple-datasources/spring-data-jpa-multiple-datasources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa/query-by-example/spring-data-jpa-query-by-example.iml" filepath="$PROJECT_DIR$/jpa/query-by-example/spring-data-jpa-query-by-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa/security/spring-data-jpa-security.iml" filepath="$PROJECT_DIR$/jpa/security/spring-data-jpa-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa/showcase/spring-data-jpa-showcase.iml" filepath="$PROJECT_DIR$/jpa/showcase/spring-data-jpa-showcase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa/vavr/spring-data-jpa-vavr.iml" filepath="$PROJECT_DIR$/jpa/vavr/spring-data-jpa-vavr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ldap/example/spring-data-ldap-example.iml" filepath="$PROJECT_DIR$/ldap/example/spring-data-ldap-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ldap/spring-data-ldap-examples.iml" filepath="$PROJECT_DIR$/ldap/spring-data-ldap-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/map/spring-data-map-repositories-example.iml" filepath="$PROJECT_DIR$/map/spring-data-map-repositories-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/aggregation/spring-data-mongodb-aggregation.iml" filepath="$PROJECT_DIR$/mongodb/aggregation/spring-data-mongodb-aggregation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/change-streams/spring-data-mongodb-change-streams.iml" filepath="$PROJECT_DIR$/mongodb/change-streams/spring-data-mongodb-change-streams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/example/spring-data-mongodb-example.iml" filepath="$PROJECT_DIR$/mongodb/example/spring-data-mongodb-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/util/spring-data-mongodb-example-utils.iml" filepath="$PROJECT_DIR$/mongodb/util/spring-data-mongodb-example-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/spring-data-mongodb-examples.iml" filepath="$PROJECT_DIR$/mongodb/spring-data-mongodb-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/fluent-api/spring-data-mongodb-fluent-api.iml" filepath="$PROJECT_DIR$/mongodb/fluent-api/spring-data-mongodb-fluent-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/geo-json/spring-data-mongodb-geojson.iml" filepath="$PROJECT_DIR$/mongodb/geo-json/spring-data-mongodb-geojson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/gridfs/spring-data-mongodb-gridfs.iml" filepath="$PROJECT_DIR$/mongodb/gridfs/spring-data-mongodb-gridfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/java8/spring-data-mongodb-java8.iml" filepath="$PROJECT_DIR$/mongodb/java8/spring-data-mongodb-java8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/query-by-example/spring-data-mongodb-query-by-example.iml" filepath="$PROJECT_DIR$/mongodb/query-by-example/spring-data-mongodb-query-by-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/reactive/spring-data-mongodb-reactive.iml" filepath="$PROJECT_DIR$/mongodb/reactive/spring-data-mongodb-reactive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/security/spring-data-mongodb-security.iml" filepath="$PROJECT_DIR$/mongodb/security/spring-data-mongodb-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/text-search/spring-data-mongodb-text-search.iml" filepath="$PROJECT_DIR$/mongodb/text-search/spring-data-mongodb-text-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mongodb/transactions/spring-data-mongodb-transactions.iml" filepath="$PROJECT_DIR$/mongodb/transactions/spring-data-mongodb-transactions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multi-store/spring-data-multi-store-example.iml" filepath="$PROJECT_DIR$/multi-store/spring-data-multi-store-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/neo4j/example/spring-data-neo4j-example.iml" filepath="$PROJECT_DIR$/neo4j/example/spring-data-neo4j-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/neo4j/spring-data-neo4j-examples.iml" filepath="$PROJECT_DIR$/neo4j/spring-data-neo4j-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis/cluster/spring-data-redis-cluster-example.iml" filepath="$PROJECT_DIR$/redis/cluster/spring-data-redis-cluster-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis/example/spring-data-redis-example.iml" filepath="$PROJECT_DIR$/redis/example/spring-data-redis-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis/util/spring-data-redis-example-utils.iml" filepath="$PROJECT_DIR$/redis/util/spring-data-redis-example-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis/spring-data-redis-examples.iml" filepath="$PROJECT_DIR$/redis/spring-data-redis-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis/reactive/spring-data-redis-reactive.iml" filepath="$PROJECT_DIR$/redis/reactive/spring-data-redis-reactive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis/repositories/spring-data-redis-repositories-example.iml" filepath="$PROJECT_DIR$/redis/repositories/spring-data-redis-repositories-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis/sentinel/spring-data-redis-sentinel-example.iml" filepath="$PROJECT_DIR$/redis/sentinel/spring-data-redis-sentinel-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest/spring-data-rest-examples.iml" filepath="$PROJECT_DIR$/rest/spring-data-rest-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest/headers/spring-data-rest-headers.iml" filepath="$PROJECT_DIR$/rest/headers/spring-data-rest-headers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest/multi-store/spring-data-rest-multi-store.iml" filepath="$PROJECT_DIR$/rest/multi-store/spring-data-rest-multi-store.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest/projections/spring-data-rest-projections.iml" filepath="$PROJECT_DIR$/rest/projections/spring-data-rest-projections.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest/security/spring-data-rest-security.iml" filepath="$PROJECT_DIR$/rest/security/spring-data-rest-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest/starbucks/spring-data-rest-starbucks.iml" filepath="$PROJECT_DIR$/rest/starbucks/spring-data-rest-starbucks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest/uri-customization/spring-data-rest-uri-customizations.iml" filepath="$PROJECT_DIR$/rest/uri-customization/spring-data-rest-uri-customizations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/solr/example/spring-data-solr-example.iml" filepath="$PROJECT_DIR$/solr/example/spring-data-solr-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/solr/util/spring-data-solr-example-utils.iml" filepath="$PROJECT_DIR$/solr/util/spring-data-solr-example-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/solr/spring-data-solr-examples.iml" filepath="$PROJECT_DIR$/solr/spring-data-solr-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/solr/managed-schema/spring-data-solr-managed-schema-example.iml" filepath="$PROJECT_DIR$/solr/managed-schema/spring-data-solr-managed-schema-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web/example/spring-data-web-example.iml" filepath="$PROJECT_DIR$/web/example/spring-data-web-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web/spring-data-web-examples.iml" filepath="$PROJECT_DIR$/web/spring-data-web-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web/projection/spring-data-web-projection.iml" filepath="$PROJECT_DIR$/web/projection/spring-data-web-projection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web/querydsl/spring-data-web-querydsl.iml" filepath="$PROJECT_DIR$/web/querydsl/spring-data-web-querydsl.iml" />
+    </modules>
+  </component>
+</project>

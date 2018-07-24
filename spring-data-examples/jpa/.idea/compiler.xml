@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-data-jpa-vavr" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="spring-data-jpa-vavr" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-data-jpa-query-by-example" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="spring-data-jpa-query-by-example" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-data-jpa-eclipselink" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="spring-data-jpa-eclipselink" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-data-jpa-interceptors" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="spring-data-jpa-interceptors" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-data-jpa-showcase" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="spring-data-jpa-showcase" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-data-jpa-example" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="spring-data-jpa-example" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-data-jpa-multiple-datasources" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="spring-data-jpa-multiple-datasources" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-data-jpa-security" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="spring-data-jpa-security" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-data-jpa-jpa21" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="spring-data-jpa-jpa21" />
+      </profile>
+      <profile default="false" name="Annotation profile for spring-data-jpa-java8" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="spring-data-jpa-java8" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-data-jpa-eclipselink" target="1.8" />
+      <module name="spring-data-jpa-example" target="1.8" />
+      <module name="spring-data-jpa-examples" target="1.8" />
+      <module name="spring-data-jpa-interceptors" target="1.8" />
+      <module name="spring-data-jpa-java8" target="1.8" />
+      <module name="spring-data-jpa-jpa21" target="1.8" />
+      <module name="spring-data-jpa-multiple-datasources" target="1.8" />
+      <module name="spring-data-jpa-query-by-example" target="1.8" />
+      <module name="spring-data-jpa-security" target="1.8" />
+      <module name="spring-data-jpa-showcase" target="1.8" />
+      <module name="spring-data-jpa-vavr" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

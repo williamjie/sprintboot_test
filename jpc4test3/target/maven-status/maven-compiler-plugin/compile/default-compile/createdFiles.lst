@@ -1,0 +1,8 @@
+com/bee/sample/ch6/service/UserService.class
+com/bee/sample/ch6/conf/DataSourceConfig.class
+com/bee/sample/ch6/controller/UserController.class
+com/bee/sample/ch6/service/impl/UserServiceImpl.class
+com/bee/sample/ch6/dao/UserRepository.class
+com/bee/sample/ch6/entity/User.class
+com/bee/sample/ch6/Ch6Application.class
+com/bee/sample/ch6/entity/Department.class

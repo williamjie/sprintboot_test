@@ -1,0 +1,14 @@
+REST
+
+GET POST Put Delete PATCH
+
+GET:获取资源
+POST:新建资源
+PUT:更新资源
+DELETE:删除资源
+PATCH：更新部分资源
+OPTIONS：用于获取URL所支持的方法
+
+*使用"api"作为web上下文
+*增加版本标示
+*标示资源

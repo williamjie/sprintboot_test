@@ -47,9 +47,16 @@ https://www.cnblogs.com/williamjie/p/9341356.html
 内存中加载的数据量过于庞大，如一次从数据库取出过多数据；集合类中有对对象的引用，使用完后未清空，使得JVM不能回收；代码中存在死循环或循环产生过多重复的对象实体；使用的第三方软件中的BUG；启动参数内存值设定的过小
 
 3、说说Java线程栈
+https://www.jb51.net/article/69258.htm
+
 4、JVM 年轻代到年老代的晋升过程的判断条件是什么呢？
+https://blog.csdn.net/cpcpcp123/article/details/51262940
+Young generation –>新生代    一个Eden区，两个 Survivor区
+Tenured / Old Generation –>老年代
+Perm Area –>永久代
+
 5、JVM 出现 fullGC 很频繁，怎么去线上排查问题？
-6、类加载为什么要使用双亲委派模式，有没有什么场景是打破了这个模式？
+6、类的加载过程；类加载为什么要使用双亲委派模式，有没有什么场景是打破了这个模式？
 7、类的实例化顺序
 8、JVM垃圾回收机制，何时触发MinorGC等操作
 9、JVM 中一次完整的 GC 流程（从 ygc 到 fgc）是怎样的

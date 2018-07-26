@@ -61,7 +61,6 @@ public class CacheConfig {
 
 			public void onMessage(Message message, byte[] pattern) {
 				byte[] bs = message.getChannel();
-				
 				try {
 					// Sub 一个消息，通知缓存管理器
 					String type = new String(bs, "UTF-8");

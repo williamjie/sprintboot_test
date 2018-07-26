@@ -25,7 +25,7 @@ public class OrderServiceImpl implements OrderService {
 			InterProcessMutex lock = new InterProcessMutex(zkClient, path);
 			if ( lock.acquire(10, TimeUnit.HOURS) ){ 
 			    try {
-			    		
+
 			        //模拟用时5秒
 			        Thread.sleep(1000*5);
 			        log.info("do job "+type+" done");
@@ -33,7 +33,7 @@ public class OrderServiceImpl implements OrderService {
 			    finally{
 			        lock.release();
 			    }
-			    
+
 			}
 		}catch(Exception ex){
 			//zk异常

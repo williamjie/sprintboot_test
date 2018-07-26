@@ -48,7 +48,7 @@ public class ZookeeperConf {
 						log.info(et + ":" + we.getPath());
 						client.checkExists().watched().forPath(we.getPath());
 					}
-					
+
 				}
 			}
 

@@ -3,9 +3,10 @@
 1、自我介绍、自己做的项目和技术领域
 
 2、项目中的监控：那个监控指标常见的有哪些？
+系统运行繁忙程度、健康状态、CPU、IO、内存
+Full GC   qps过高  网络繁忙 丢包率
 
 3、微服务涉及到的技术以及需要注意的问题有哪些？
-
 
 4、注册中心你了解了哪些？
 
@@ -25,6 +26,8 @@ https://www.cnblogs.com/williamjie/p/9369878.html
 11、HashMap 和 hashTable 区别？
 
 12、Object 的 hashcode 方法重写了，equals 方法要不要改？
+
+　在有些情况下，程序设计者在设计一个类的时候为需要重写equals方法，比如String类，但是千万要注意，在重写equals方法的同时，必须重写hashCode方法。为什么这么说呢？？
 
 13、Hashmap 线程不安全的出现场景
 
@@ -46,7 +49,6 @@ https://www.cnblogs.com/williamjie/p/9369878.html
 
 22、你有什么问题想问我的吗？
 
-
 23.spring 的优点？
 
 24.什么是DI机制？
@@ -55,16 +57,13 @@ https://www.cnblogs.com/williamjie/p/9369878.html
 
 26.aop框架具有的两个特征?
 
-
 28.spring boot Configuration和Bean自动装配
 
 29.Java虚拟机类加载机制
 https://blog.csdn.net/u013256816/article/details/50829596
 
-
-
-
-
+30.缓存击穿、缓存穿透、缓存雪崩
+https://www.cnblogs.com/williamjie/p/9394229.html
 
 答案：
 
@@ -107,6 +106,107 @@ AOP:面向切面编程。（Aspect-Oriented Programming）
 	简单点解释，比方说你想在你的biz层所有类中都加上一个打印‘你好’的功能这你经可以用aop思想来做，你先写个类写个方法，方法经实现打印‘你好’让后你Ioc这个类 ref＝“biz.*”让每个类都注入。
 
 
+10.生命周期
+https://www.cnblogs.com/williamjie/p/9377856.html
+
+11.hashtable 基本被弃用了，目前hashmap用的比较多
+Hashtable是线程安全的，它的每个方法中都加入了Synchronize方法。在多线程并发的环境下，可以直接使用Hashtable，不需要自己为它的方法实现同步
+
+HashMap与HashTable相同点
+1.二者都是以哈希表数据结构存储数据.
+2.二者都是以链表来作为解决冲突方案:由于不同的对象最终获取的hash值可能一致,这时候就会在该hash表所对应的链表的头结点插入这个键值对.
+3.二者都可以进行数组扩容
+
+
+
+https://www.cnblogs.com/williamjie/p/9377538.html
+ConcurrentHashMap具体是怎么实现线程安全的呢，肯定不可能是每个方法加synchronized，那样就变成了HashTable
+
+ConcurrentHashMap和HashTable 不同点在于加锁的粒度不一样；
+
+
+HashMap和ConcurrentHashMap源码讲解
+https://blog.csdn.net/liuyanming123/article/details/79662511
+
+
+12.需要同步override；理由见下面
+https://www.cnblogs.com/williamjie/p/9388872.html
+
+“设计hashCode()时最重要的因素就是：无论何时，对同一个对象调用hashCode()都应该产生同样的值。如果在讲一个对象用put()添加进HashMap时产生一个hashCdoe值，而用get()取出时却产生了另一个hashCode值，那么就无法获取该对象了。所以如果你的hashCode方法依赖于对象中易变的数据，用户就要当心了，因为此数据发生变化时，hashCode()方法就会生成一个不同的散列码”。
+
+
+修改eqaul 必须改hashcode；（equal get 依赖hashcode）
+修改hashcode，不一定修改equal
+
+
+13.HashMap的实现里没有锁的机制，因此它是线程不安全的。
+1)多个线程同时操作一个hashmap就可能出现不安全的情况：
+2)一个HashMap的容量为16，加载因子为0.75，那么阀值就是12，所以在往HashMap中put的值到达12时，它将自动扩容两倍，如果两个线程同时遇到HashMap的大小达到12的倍数时，就很有可能会出现在将oldTable转移到newTable的过程中遇到问题，从而导致最终的HashMap的值存储异常
+3)构造entry<K,V>单链表时，也会出现不安全的情况
+
+
+14.
+1）top -c 查找进程
+
+2）top -Hp 10765  查找线程
+top -Hp 10765 ，显示一个进程的线程运行信息列表
+
+
+3）printf “%x” 10804
+如上图，10804对应的16进制是0x2a34，当然，这一步可以用计算器。
+
+4）查看堆栈，找到线程在干嘛
+工具：pstack/jstack/grep
+方法：jstack 10765 | grep ‘0x2a34’ -C5 --color
+https://www.cnblogs.com/williamjie/p/9389284.html
+
+
+
+15、https://www.cnblogs.com/williamjie/p/9389383.html
+newCachedThreadPool创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。线程池的规模不存在限制。
+newFixedThreadPool 创建一个固定长度线程池，可控制线程最大并发数，超出的线程会在队列中等待。
+newScheduledThreadPool 创建一个固定长度线程池，支持定时及周期性任务执行。
+newSingleThreadExecutor 创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。
+
+
+16.https://www.cnblogs.com/williamjie/p/9389530.html
+索引优化、语句优化、缓存表、order by 降低查询速度
+
+
+18.mysql索引关键词 explain
+https://www.cnblogs.com/williamjie/p/9390135.html
+
+
+19.https://www.cnblogs.com/williamjie/p/9390164.html
+数据可靠传输依靠包确认。
+
+tcp三次握手、四次挥手
+由于TCP连接是全双工的，因此每个方向都必须单独进行关闭。这个原则是当一方完成它的数据发送任务后就能发送一个FIN来终止这个方向的连接。收到一个 FIN只意味着这一方向上没有数据流动，一个TCP连接在收到一个FIN后仍能发送数据。首先进行关闭的一方将执行主动关闭，而另一方执行被动关闭。
+（1）客户端A发送一个FIN，用来关闭客户A到服务器B的数据传送(报文段4)。
+（2）服务器B收到这个FIN，它发回一个ACK，确认序号为收到的序号加1(报文段5)。和SYN一样，一个FIN将占用一个序号。
+（3）服务器B关闭与客户端A的连接，发送一个FIN给客户端A(报文段6)。
+（4）客户端A发回ACK报文确认，并将确认序号设置为收到序号加1(报文段7)。
+TCP采用四次挥手关闭连接如图2所示。
+
+为什么TIME_WAIT状态还需要等2MSL后才能返回到CLOSED状态
+1）可靠的实现TCP全双工链接的终止
+2）允许老的重复的分节在网络中消逝。
+
+
+20.排序算法
+https://www.cnblogs.com/williamjie/p/9390340.html
+
+21.
+方法一：排序，奇数的话，中间的数值；偶数的话，取平均值
+方法二：大顶堆，堆排序；中间的数值。
+
+
+22.
+公司的具体业务，可能参与的项目；
+技术栈要求，
+工作时间要求，
+待遇方面要求，
+
 
 
 23：
@@ -130,7 +230,11 @@ AOP:面向切面编程。（Aspect-Oriented Programming）
 10.Spring的高度放性，并不强制应用完全依赖于Spring，开发者可以自由选择spring的部分或全部
 
 
-24:
+24:https://www.cnblogs.com/williamjie/p/9390439.html
+控制器交给了 容器来管理；只需要使用就好，不需要new了
+
+控制反转
+
 依赖注入（Dependecy Injection）和控制反转（Inversion of Control）是同一个概念，具体的讲：当某个角色
 需要另外一个角色协助的时候，在传统的程序设计过程中，通常由调用者来创建被调用者的实例。但在spring中
 创建被调用者的工作不再由调用者来完成，因此称为控制反转。创建被调用者的工作由spring来完成，然后注入调用者

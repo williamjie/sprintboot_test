@@ -4,8 +4,8 @@ Java 并发
 
 
 
-
-
+1.synchronized
+2.线程的几个状态:new,runnable(thread.start()),running,blocking(Thread.Sleep())
 
 Netty
 1、BIO、NIO和AIO

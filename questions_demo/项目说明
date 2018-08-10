@@ -22,21 +22,67 @@ javascript c++
 
 项目中的难点
 1.消息推送项目上云项目
+redis集群部署问题；Sentinal机器部署，负载非常高。经常出现机器主备切换，导致消息无法触达；
+
 公司实际网关项目docker golang
 
 2.golang 重写nodejs版本推送服务
-
 golang版本推送服务二个核心；
 比如有几个区，区域是可以注册到发送中心；
 
+这里主要由这几个技术难点：
+【a】.socket.io   websocket 网络问题导致出现故障
+SocketIO将WebSocket、AJAX和其它的通信方式全部封装成了统一的通信接口，也就是说，我们在使用SocketIO时，不用担心兼容问题，底层会自动选用最佳的通信方式
+
+websocket是一种长连接协议，用nodejs实现了这个ws协议的库也叫websocket，github搜索一下就有。socket.io也是实现了ws协议的库，不过它支持的更多，不仅实现了ws协议，也支持长轮询等方式，兼容flash，IE6等不支持ws协议的浏览器。
+
+如果是Android和ios终端，建议你走mqtt协议，专门为移动设备设计的，低流量、低耗电等。
+
+关于 Socket.io 还有一点需要注意：Socke.io 并不完全是 WebSocket 的实现。
+
+Note: Socket.IO is not a WebSocket implementation. Although Socket.IO indeed uses WebSocket as a transport when possible, it adds some metadata to each packet: the packet type, the namespace and the ack id when a message acknowledgement is needed.
+
+注意：Socket.IO不是WebSocket实现。 尽管Socket.IO确实在可能的情况下使用WebSocket作为传输，但它会为每个数据包添加一些元数据：数据包类型，命名空间和需要消息确认时的确认ID。
+
+
+不是标准http方式，导致出现了问题，营运商对于标准http 支持很好；非标准http导致确认包而棘手不到
+
+
+【b】.redis 使用不当;
+短时间大量的消息处理；1s大概3万多个，平滑峰值。
+
+rabix查询cpu，监控单cpu过高；导致出现异常，redis卡死；
+最开始通过push/sub模式，短时间大量的推送发送，cpu卡死
+info commandstats和slowlog get。
+
+ 【c】.简单介绍完两种持久化策略之后，最后给出我实际优化后的策略：主/从业务库关闭rdb和aof持久化，新增一台从库（不参与业务）单独做rdb持久化，该从库持久化配置：save 900 1  也就是900秒做一次bgrewrite，最多丢失15分钟数据连接数问题，这块目前来说由于做了负载均衡，高峰期看haproxy入口的连接最大也就去到500-600，还是有阻塞的情况下，每个redis实例connected_clients最多也就到100左右，排除连接数的问题
+结论：优化主要避免了持久化，以及频繁主从全量同步带来的性能影响。但是实际主要瓶颈还是在慢查询，如果keys xxx*这种查询不能避免，那么一定会造成阻塞
+
+
+网络IO是非常消耗机器资源的，尽量不要在一个循环里无脑地疯狂发包，比如底层网络编程中，需要检测套接字发送缓冲区是否可写，无论你使用epoll还是select，都有读写触发事件的机制
+
+
 3.安卓客户端自拉起被kill。第三方推送渠道，小米，华为推送
 客户端上报推送
+
+
 
 4.自研推送与第三方推送间的   适配问题；
 出现重复推送
 
 自主选择推送渠道
 上报的同步问题：redis同步在线状态
+消息最后是否有到达，自研推送会有回包机制，消息统计消息是否到达。
+苹果推送，失败会有返回原因;
+华为推送默认发送成功。
+小米推送有失败回调，其他默认成功。
+
+保证消息到达客户。
+
+
+全链路监控，statsd+Prometheus+Grafana
+（破若 没贼 而死）
+
 
 5.短信平台；主要解决直接插入数据库，不安全；业务需求，业务系统；
 多通道自动切换，通道异常自动报警，灾备同城双机房

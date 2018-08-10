@@ -34,27 +34,42 @@ http://www.cnblogs.com/williamjie/p/9341444.html
 我们了解了synchronized是一个重量级的锁，虽然JVM对它做了很多优化，而下面介绍的volatile则是轻量级的synchronized。如果一个变量使用volatile，则它比使用synchronized的成本更加低，因为它不会引起线程上下文的切换和调度
 
 
-3、Java 的信号灯？ 
-4、synchronized 在静态方法和普通方法的区别？ 
-5、怎么实现所有线程在等待某个事件的发生才会去执行？ 
-6、CAS？CAS 有什么缺陷，如何解决？ 
-7、synchronized 和 lock 有什么区别？ 
-8、Hashtable 是怎么加锁的 ？ 
-9、HashMap 的并发问题？ 
-10、ConcurrenHashMap 介绍？1.8 中为什么要用红黑树？ 
-11、AQS 
-12、如何检测死锁？怎么预防死锁？ 
-13、Java 内存模型？ 
-14、如何保证多线程下 i++ 结果正确？ 
-15、线程池的种类，区别和使用场景？ 
-16、分析线程池的实现原理和线程的调度过程？ 
-17、线程池如何调优，最大数目如何确认？ 
-18、ThreadLocal原理，用的时候需要注意什么？ 
-19、CountDownLatch 和 CyclicBarrier 的用法，以及相互之间的差别? 
-20、LockSupport工具 
-21、Condition接口及其实现原理 
-22、Fork/Join框架的理解 
-23、分段锁的原理,锁力度减小的思考 
+3、Java 的信号灯？
+https://www.cnblogs.com/williamjie/p/9456553.html
+Semaphore实现的功能就类似厕所有5个坑，假如有10个人要上厕所，那么同时只能有多少个人去上厕所呢？同时只能有5个人能够占用，当5个人中 的任何一个人让开后，其中等待的另外5个人中又有一个人可以去占用了。另外等待的5个人中可以是随机获得优先机会，也可以是按照先来后到的顺序获得机会，这取决于构造Semaphore对象时传入的参数选项。单个信号量的Semaphore对象可以实现互斥锁的功能，并且可以是由一个线程获得了“锁”，再由另一个线程释放“锁”，这可应用于死锁恢复的一些场合，所以单个信号量的Semaphore对象的功能就和synchronized实现互斥是共同的
+
+
+
+4、synchronized 在静态方法和普通方法的区别？
+一个是class的锁、 一个是类的锁。
+https://www.cnblogs.com/williamjie/p/9456569.html
+　　在Java中，synchronized是用来表示同步的，我们可以synchronized来修饰一个方法。也可以synchronized来修饰方法里面的一个语句块。那么，在static方法和非static方法前面加synchronized到底有什么不同呢？大家都知道，static的方法属于类方法，它属于这个Class（注意：这里的Class不是指Class的某个具体对象），那么static获取到的锁，是属于类的锁。而非static方法获取到的锁，是属于当前对象的锁。所以，他们之间不会产生互斥。
+
+
+5、怎么实现所有线程在等待某个事件的发生才会去执行？
+1.消息队列，订阅消息；
+2.信号量
+3.加锁
+
+
+6、CAS？CAS 有什么缺陷，如何解决？
+7、synchronized 和 lock 有什么区别？
+8、Hashtable 是怎么加锁的 ？
+9、HashMap 的并发问题？
+10、ConcurrenHashMap 介绍？1.8 中为什么要用红黑树？
+11、AQS
+12、如何检测死锁？怎么预防死锁？
+13、Java 内存模型？
+14、如何保证多线程下 i++ 结果正确？
+15、线程池的种类，区别和使用场景？
+16、分析线程池的实现原理和线程的调度过程？
+17、线程池如何调优，最大数目如何确认？
+18、ThreadLocal原理，用的时候需要注意什么？
+19、CountDownLatch 和 CyclicBarrier 的用法，以及相互之间的差别?
+20、LockSupport工具
+21、Condition接口及其实现原理
+22、Fork/Join框架的理解
+23、分段锁的原理,锁力度减小的思考
 24、八种阻塞队列以及各个阻塞队列的特性
 
 25、线程的几个状态:new,runnable(thread.start()),running,blocking(Thread.Sleep())

@@ -7,13 +7,20 @@ ArrayList实现了List接口,它是以数组的方式来实现的,数组的特�
 LinkedList是采用链表的方式来实现List接口的,它本身有自己特定的方法 如:addFirst(),addLast(),getFirst(),removeFirst()等. 由于是采用链表实现的,因此在进行insert和remove动作时在效率上要比ArrayList要好得多!适合用来实现Stack(堆栈)与Queue(队列),前者先进后出，后者是先进先出.
 
 
-HashSet与TreeSet的使用场景 HashSet：哈希表是通过使用称为散列法的机制来存储信息的，元素并没有以某种特定顺序来存放 TreeSet：提供一个使用树结构存储Set接口的实现(红黑树算法)，对象以升序顺序存储，访问和遍历的时间很快。 使用场景:HashSet是基于Hash算法实现的，其性能通常都优于TreeSet。我们通常都应该使用HashSet，在我们需要排序的功能时，我们才使用TreeSet。
+HashSet与TreeSet的使用场景
+
+HashSet：哈希表是通过使用称为散列法的机制来存储信息的，元素并没有以某种特定顺序来存放
+
+TreeSet：提供一个使用树结构存储Set接口的实现(红黑树算法)，对象以升序顺序存储，访问和遍历的时间很快。 使用场景:HashSet是基于Hash算法实现的，其性能通常都优于TreeSet。我们通常都应该使用HashSet，在我们需要排序的功能时，我们才使用TreeSet。
 
 HashSet实现Set接口，由哈希表（实际上是一个HashMap实例）支持。它不保证set 的迭代顺序；特别是它不保证该顺序恒久不变，此类允许使用null元素。
 在HashSet中，元素都存到HashMap键值对的Key上面，而Value时有一个统一的值private static final Object PRESENT = new Object();，
 
 
-HashMap 以及TreeMap :HashMap通过hashcode对其内容进行快速查找，而 TreeMap中所有的元素都保持着某种固定的顺序，如果你需要得到一个有序的结果你就应该使用TreeMap（HashMap中元素的排列顺序是不固定的）。 使用场景 HashMap:适用于在Map中插入、删除和定位元素。 Treemap:适用于按自然顺序或自定义顺序遍历键（key）
+HashMap 以及TreeMap :HashMap通过hashcode对其内容进行快速查找，而 TreeMap中所有的元素都保持着某种固定的顺序，如果你需要得到一个有序的结果你就应该使用TreeMap（HashMap中元素的排列顺序是不固定的）。
+
+使用场景
+HashMap:适用于在Map中插入、删除和定位元素。 Treemap:适用于按自然顺序或自定义顺序遍历键（key）
 
 
 2.Java 中extends与implements通过关键字extends来创建一个类的子类。一个类通过关键字implements声明自己使用一个或者多个接口。
@@ -24,7 +31,9 @@ implements 是实现多个接口, 接口的方法一般为空的, 必须重写�
 final:凡是对成员变量或者本地变量(在方法中的或者代码块中的变量称为本地变量)声明为final的都叫作final变量。final变量经常和static关键字一起使用，作为常量，final 变量是只读的。
 
 
-2、HashSet 是如何保证不重复的     HashSet的构造方法其实就是在内部实例化了一个HashMap对象。其中还会看到一个static final的PRESENT变量，这个稍候再说，其实没什么实际用处。其实，这时候答案已经出来了:HashMap的key是不能重复的，而这里HashSet的元素又是作为了map的key，当然也不能重复了。
+2、HashSet 是如何保证不重复的
+
+HashSet的构造方法其实就是在内部实例化了一个HashMap对象。其中还会看到一个static final的PRESENT变量，这个稍候再说，其实没什么实际用处。其实，这时候答案已经出来了:HashMap的key是不能重复的，而这里HashSet的元素又是作为了map的key，当然也不能重复了。
 HashSet 的add方法
 public boolean add(E e) {
     return map.put(e, PRESENT)==null;
@@ -48,19 +57,23 @@ HashMap 与HashTable区别以及各种的应用场景、HashMap 1.7 与 1.8 的 
      非并发场景使用HashMap，并发场景可以使用Hashtable，但是推荐使用ConcurrentHashMap（锁粒度更低、效率更高）；另外使用在使用HashMap时要注意null值的判断；Hashtable也要注意防止put null key和 null value；HashMap提供对key的Set进行遍历，因此它是fail-fast的，但HashTable提供对key的Enumeration进行遍历，它不支持fail-fast
 
 7、强引用 、软引用、 弱引用、虚引用
+
 主要是为了更好的进行内存管理而设置的一套机制，粗俗的说就是不同的引用垃圾回收的力度不同。
 强引用：只要引用存在，垃圾回收器永远不会回收
-软引用（SoftReference）：非必须引用，内存溢出之前进行回收，可以通过以下代码实现 
-弱引用（WeakReference）：弱引用是在第二次垃圾回收时回收，短时间内通过弱引用取对应的数据，可以取到，当执行过第二次垃圾回收时，将返回null 
+软引用（SoftReference）：非必须引用，内存溢出之前进行回收，可以通过以下代码实现
+
+弱引用（WeakReference）：弱引用是在第二次垃圾回收时回收，短时间内通过弱引用取对应的数据，可以取到，当执行过第二次垃圾回收时，将返回null
+
 虚引用（PhantomReference）：虚引用是每次垃圾回收的时候都会被回收，通过虚引用的get方法永远获取到的数据为null，因此也被成为幽灵引用。
 
 
 8、Java反射 、说说反射的用途及实现
 *JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
-*Java反射机制主要提供了以下功能： 在运行时判断任意一个对象所属的类；在运行时构造任意一个类的对象；在运行时判断任意一个类所具有的成员变量和方法；在运行时调用任意一个对象的方法；生成动态代理。
+*Java反射机制主要提供了以下功能：
+在运行时判断任意一个对象所属的类；在运行时构造任意一个类的对象；在运行时判断任意一个类所具有的成员变量和方法；在运行时调用任意一个对象的方法；生成动态代理。
 
 
-9、Arrays.sort 实现原理和 Collection 实现原理 
+9、Arrays.sort 实现原理和 Collection 实现原理
 事实上Collections.sort方法底层就是调用的array.sort方法，而且不论是Collections.sort或者是Arrays.sort方法
 
 10、LinkedHashMap的应用

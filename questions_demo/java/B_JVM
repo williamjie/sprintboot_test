@@ -58,12 +58,23 @@ Tenured / Old Generation –>老年代
 Perm Area –>永久代
 
 5、JVM 出现 fullGC 很频繁，怎么去线上排查问题？
+
 6、类的加载过程；类加载为什么要使用双亲委派模式，有没有什么场景是打破了这个模式？
+
 7、类的实例化顺序
+https://mp.weixin.qq.com/s?__biz=MzI4NDY5Mjc1Mg==&mid=2247483934&idx=1&sn=41c46eceb2add54b7cde9eeb01412a90&chksm=ebf6da61dc81537721d36aadb5d20613b0449762842f9128753e716ce5fefe2b659d8654c4e8&scene=21#wechat_redirect
+
+
 8、JVM垃圾回收机制，何时触发MinorGC等操作
+
 9、JVM 中一次完整的 GC 流程（从 ygc 到 fgc）是怎样的
+
 10、各种回收器，各自优缺点，重点CMS、G1
+
 11、各种回收算法
+https://mp.weixin.qq.com/s?__biz=MzI4NDY5Mjc1Mg==&mid=2247483952&idx=1&sn=ea12792a9b7c67baddfaf425d8272d33&chksm=ebf6da4fdc815359869107a4acd15538b3596ba006b4005b216688b69372650dbd18c0184643&scene=21#wechat_redirect
+
+
 12、OOM错误，stackoverflow错误，permgen space错误
 
 13、jvm 总体梳理

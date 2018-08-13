@@ -3,3 +3,22 @@
 
 1.Go语言并发机制初探
 https://www.cnblogs.com/williamjie/p/9456764.html
+
+
+
+2.本文通过 Java 和 Golang 在底层原理上的差异，分析了 Java 为什么只能创建数千个线程，而 Golang 可以有数百万的 Goroutines，并在上下文切换、栈大小方面对两者的实现原理进行了剖析。
+https://www.cnblogs.com/williamjie/p/9466404.html
+
+3.golang  M实际的内核   P 进程    G 协程
+Go语言中支撑整个scheduler实现的主要有4个重要结构，分别是M、G、P、Sched， 前三个定义在runtime.h中，Sched定义在proc.c中。
+Sched结构就是调度器，它维护有存储M和G的队列以及调度器的一些状态信息等。
+
+M结构是Machine，系统线程，它由操作系统管理的，goroutine就是跑在M之上的；M是一个很大的结构，里面维护小对象内存cache（mcache）、当前执行的goroutine、随机数发生器等等非常多的信息。
+
+P结构是Processor，处理器，它的主要用途就是用来执行goroutine的，它维护了一个goroutine队列，即runqueue。Processor是让我们从N:1调度到M:N调度的重要部分。
+
+G是goroutine实现的核心结构，它包含了栈，指令指针，以及其他对调度goroutine很重要的信息，例如其阻塞的channel。
+
+
+
+https://www.cnblogs.com/williamjie/p/9456764.html

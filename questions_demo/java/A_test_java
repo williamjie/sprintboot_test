@@ -4,7 +4,13 @@ Java基础
 
 ArrayList实现了List接口,它是以数组的方式来实现的,数组的特性是可以使用索引的方式来快速定位对象的位置,因此对于快速的随机取得对象的需求,使用ArrayList实现执行效率上会比较好.
 
+
 LinkedList是采用链表的方式来实现List接口的,它本身有自己特定的方法 如:addFirst(),addLast(),getFirst(),removeFirst()等. 由于是采用链表实现的,因此在进行insert和remove动作时在效率上要比ArrayList要好得多!适合用来实现Stack(堆栈)与Queue(队列),前者先进后出，后者是先进先出.
+
+LinkedList 是一个继承于AbstractSequentialList的双向链表。它也可以被当作堆栈、队列或双端队列进行操作。
+LinkedList 实现 List 接口，能进行队列操作。
+LinkedList 实现 Deque 接口，即能将LinkedList当作双端队列使用。
+ArrayList底层是由数组支持，而LinkedList 是由双向链表实现的，其中的每个对象包含数据的同时还包含指向链表中前一个与后一个元素的引用。
 
 
 HashSet与TreeSet的使用场景
@@ -59,7 +65,9 @@ HashMap 与HashTable区别以及各种的应用场景、HashMap 1.7 与 1.8 的 
 7、强引用 、软引用、 弱引用、虚引用
 
 主要是为了更好的进行内存管理而设置的一套机制，粗俗的说就是不同的引用垃圾回收的力度不同。
+
 强引用：只要引用存在，垃圾回收器永远不会回收
+
 软引用（SoftReference）：非必须引用，内存溢出之前进行回收，可以通过以下代码实现
 
 弱引用（WeakReference）：弱引用是在第二次垃圾回收时回收，短时间内通过弱引用取对应的数据，可以取到，当执行过第二次垃圾回收时，将返回null
@@ -96,7 +104,7 @@ Hashtable与HashMap类似，不同的是：它不允许记录的键或者值为�
 
 LinkedHashMap保存了记录的插入顺序，在用Iterator遍历LinkedHashMap时，先得到的记录肯定是先插入的。
 
-在遍历的时候会比HashMap慢TreeMap能够把它保存的记录根据键排序，默认是按升序排序，也可以指定排序的比较器。当用Iterator遍历TreeMap时，得到的记录是排过序的。 
+在遍历的时候会比HashMap慢TreeMap能够把它保存的记录根据键排序，默认是按升序排序，也可以指定排序的比较器。当用Iterator遍历TreeMap时，得到的记录是排过序的。
 
 
 
@@ -129,7 +137,9 @@ https://www.cnblogs.com/williamjie/p/9394777.html
 
 16、final, finally, finalize 的区别
 final修饰符（关键字）。被final修饰的类，就意味着不能再派生出新的子类，不能作为父类而被子类继承。因此一个类不能既被abstract声明，又被final声明。将变量或方法声明为final，可以保证他们在使用的过程中不被修改。被声明为final的变量必须在声明时给出变量的初始值，而在以后的引用中只能读取。被final声明的方法也同样只能使用，不能重载
+
 finally是在异常处理时提供finally块来执行任何清除操作
+
 finalize是方法名。java技术允许使用finalize（）方法在垃圾收集器将对象从内存中清除出去之前做必要的清理工作。这个方法是由垃圾收集器在确定这个对象没有被引用时对这个对象调用的。它是在object类中定义的，因此所有的类都继承了它。子类覆盖finalize（）方法以整理系统资源或者被执行其他清理工作。finalize（）方法是在垃圾收集器删除对象之前对这个对象调用的。
 
 
@@ -150,7 +160,7 @@ override（重写）
 　　 4、存在于父类和子类之间。
 　　 5、方法被定义为final不能被重写。
 　overload（重载）
-　　1、参数类型、个数、顺序至少有一个不相同。 
+　　1、参数类型、个数、顺序至少有一个不相同。
 　　2、不能重载只有返回值不同的方法名。
 　　3、存在于父类和子类、同类中。
 
@@ -159,22 +169,25 @@ override（重写）
 常用註解
 　　在日常編程中，我們遇到的註解有@Override、@SuppressWarnings等等，@Override表示重寫父類的方法，@SuppressWarnings表示忽略警告信息。
 
+
 22、HTTP 请求的 GET 与 POST 方式的区别
 Get是最常用的方法，通常用于请求服务器发送某个资源，而且应该是安全的和幂等的。
 POST方法向服务器提交数据，比如完成表单数据的提交，将数据提交给服务器处理。
 PUT方法是让服务器用请求的主体部分来创建一个由所请求的URL命名的新文档；如果那个文档存在的话，就用这个主体来代替它。
 DELETE方法就是请求服务器删除指定URL所对应的资源。但是，客户端无法保证删除操作一定会被执行，因为HTTP规范允许服务器在不通知客户端的情况下撤销请求。
 HEAD方法与GET方法的行为很类似，但服务器在响应中只返回实体的主体部分。这就允许客户端在未获取实际资源的情况下，对资源的首部进行检查，
-使用HEAD，我们可以更高效的完成以下工作： 
-①. 在不获取资源的情况下，了解资源的一些信息，比如资源类型； 
-②. 通过查看响应中的状态码，可以确定资源是否存在； 
+使用HEAD，我们可以更高效的完成以下工作：
+①. 在不获取资源的情况下，了解资源的一些信息，比如资源类型；
+②. 通过查看响应中的状态码，可以确定资源是否存在；
 ③. 通过查看首部，测试资源是否被修改。
 TRACE方法会在目的服务器端发起一个“回环”诊断，我们都知道，客户端在发起一个请求时，这个请求可能要穿过防火墙、代理、网关、或者其它的一些应用程序。这中间的每个节点都可能会修改原始的HTTP请求，TRACE方法允许客户端在最终将请求发送服务器时，它变成了什么样子。由于有一个“回环”诊断，在请求最终到达服务器时，服务器会弹回一条TRACE响应，并在响应主体中携带它收到的原始请求报文的最终模样。这样客户端就可以查看HTTP请求报文在发送的途中，是否被修改过了。
 OPTIONS方法用于获取当前URL所支持的方法。若请求成功，则它会在HTTP头中包含一个名为“Allow”的头，值是所支持的方法，如“GET, POST”。
 
+
+
 23、session 与 cookie 区别、session 分布式处理
 具体来说cookie机制采用的是在客户端保持状态的方案，而session机制采用的是在服务器端保持状态的方案。
-同时我们也看到，由于采用服务器端保持状态的方案在客户端也需要保存一个标识，所以session机制可能需要借助于cookie机制来达到保存标识的目的，但实际上它还有其他选择。 
+同时我们也看到，由于采用服务器端保持状态的方案在客户端也需要保存一个标识，所以session机制可能需要借助于cookie机制来达到保存标识的目的，但实际上它还有其他选择。
 cookie 和session 的区别：
 1、cookie数据存放在客户的浏览器上，session数据放在服务器上。
 2、cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗
@@ -205,7 +218,8 @@ cookie 和session 的区别：
 　　持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作。
 　　例如我们在使用JDBC操作数据库时，在提交事务方法后，提示用户事务操作完成，当我们程序执行完成直到看到提示后，就可以认定事务以及正确提交，即使这时候数据库出现了问题，也必须要将我们的事务完全执行完成，否则就会造成我们看到提示事务处理完毕，但是数据库因为故障而没有执行事务的重大错误。
 
-         以上介绍完事务的四大特性(简称ACID)，现在重点来说明下事务的隔离性，当多个线程都开启事务操作数据库中的数据时，数据库系统要能进行隔离操作，以保证各个线程获取数据的准确性，在介绍数据库提供的各种隔离级别之前，我们先看看如果不考虑事务的隔离性，会发生的几种问题：
+以上介绍完事务的四大特性(简称ACID)，现在重点来说明下事务的隔离性，当多个线程都开启事务操作数据库中的数据时，数据库系统要能进行隔离操作，以保证各个线程获取数据的准确性，在介绍数据库提供的各种隔离级别之前，我们先看看如果不考虑事务的隔离性，会发生的几种问题：
+
 1，脏读
 　　脏读是指在一个事务处理过程里读取了另一个未提交的事务中的数据。
 2，不可重复读
@@ -216,24 +230,23 @@ cookie 和session 的区别：
 3，虚读(幻读)
 　　幻读是事务非独立执行时发生的一种现象。例如事务T1对一个表中所有的行的某个数据项做了从“1”修改为“2”的操作，这时事务T2又对这个表中插入了一行数据项，而这个数据项的数值还是为“1”并且提交给数据库。而操作事务T1的用户如果再查看刚刚修改的数据，会发现还有一行没有修改，其实这行是从事务T2中添加的，就好像产生幻觉一样，这就是发生了幻读。
 　　幻读和不可重复读都是读取了另一条已经提交的事务（这点就脏读不同），所不同的是不可重复读查询的都是同一个数据项，而幻读针对的是一批数据整体（比如数据的个数）。
- 
+
 　　现在来看看MySQL数据库为我们提供的四种隔离级别：
 　　① Serializable (串行化)：可避免脏读、不可重复读、幻读的发生。
 　　② Repeatable read (可重复读)：可避免脏读、不可重复读的发生。
 　　③ Read committed (读已提交)：可避免脏读的发生。
 　　④ Read uncommitted (读未提交)：最低级别，任何情况都无法保证。
- 
+
 　　以上四种隔离级别最高的是Serializable级别，最低的是Read uncommitted级别，当然级别越高，执行效率就越低。像Serializable这样的级别，就是以锁表的方式(类似于Java多线程中的锁)使得其他的线程只能在锁外等待，所以平时选用何种隔离级别应该根据实际情况。在MySQL数据库中默认的隔离级别为Repeatable read (可重复读)。
 　　在MySQL数据库中，支持上面四种隔离级别，默认的为Repeatable read (可重复读)；而在Oracle数据库中，只支持Serializable (串行化)级别和Read committed (读已提交)这两种级别，其中默认的为Read committed级别。
-　　在MySQL数据库中查看当前事务的隔离级别：
 
 
 27、MVC 设计思想
 　　MVC的优点
-　　大部分用过程语言比如ASP、PHP开发出来的Web应用，初始的开发模板就是混合层的数据编程。例如，直接向数据库发送请求并用HTML显示,开发速度往往比较快,但由于数据页面的分离不是很直接,因而很难体现出业务模型的样子或者模型的重用性。产品设计弹性力度很小，很难满足用户的变化性需求。MVC要求对应用分层，虽然要花费额外的工作，但产品的结构清晰，产品的应用通过模型可以得到更好地体现。 
-　　首先，最重要的是应该有多个视图对应一个模型的能力。在目前用户需求的快速变化下，可能有多种方式访问应用的要求。例如，订单模型可能有本系统的订单，也有网上订单，或者其他系统的订单，但对于订单的处理都是一样，也就是说订单的处理是一致的。按MVC设计模式，一个订单模型以及多个视图即可解决问题。这样减少了代码的复制，即减少了代码的维护量，一旦模型发生改变，也易于维护。 其次，由于模型返回的数据不带任何显示格式，因而这些模型也可直接应用于接口的使用。 
-　　再次，由于一个应用被分离为三层，因此有时改变其中的一层就能满足应用的改变。一个应用的业务流程或者业务规则的改变只需改动MVC的模型层。 
-　　控制层的概念也很有效，由于它把不同的模型和不同的视图组合在一起完成不同的请求，因此，控制层可以说是包含了用户请求权限的概念。 
+　　大部分用过程语言比如ASP、PHP开发出来的Web应用，初始的开发模板就是混合层的数据编程。例如，直接向数据库发送请求并用HTML显示,开发速度往往比较快,但由于数据页面的分离不是很直接,因而很难体现出业务模型的样子或者模型的重用性。产品设计弹性力度很小，很难满足用户的变化性需求。MVC要求对应用分层，虽然要花费额外的工作，但产品的结构清晰，产品的应用通过模型可以得到更好地体现。
+　　首先，最重要的是应该有多个视图对应一个模型的能力。在目前用户需求的快速变化下，可能有多种方式访问应用的要求。例如，订单模型可能有本系统的订单，也有网上订单，或者其他系统的订单，但对于订单的处理都是一样，也就是说订单的处理是一致的。按MVC设计模式，一个订单模型以及多个视图即可解决问题。这样减少了代码的复制，即减少了代码的维护量，一旦模型发生改变，也易于维护。 其次，由于模型返回的数据不带任何显示格式，因而这些模型也可直接应用于接口的使用。
+　　再次，由于一个应用被分离为三层，因此有时改变其中的一层就能满足应用的改变。一个应用的业务流程或者业务规则的改变只需改动MVC的模型层。
+　　控制层的概念也很有效，由于它把不同的模型和不同的视图组合在一起完成不同的请求，因此，控制层可以说是包含了用户请求权限的概念。
 　　最后，它还有利于软件工程化管理。由于不同的层各司其职，每一层不同的应用具有某些相同的特征，有利于通过工程化、工具化产生管理程序代码。
 
 28、equals 与 == 的区别
@@ -247,12 +260,13 @@ int a=10 与 long b=10L 与 double c=10.0都是相同的（为true），因为�
 
 29、List 和 Set 区别 以及Map区别
 1、List,Set都是继承自Collection接口，Map则不是
-2、List特点：元素有放入顺序，元素可重复 ，Set特点：元素无放入顺序，元素不可重复，重复元素会覆盖掉，（注意：元素虽然无放入顺序，但是元素在set中的位置是有该元素的HashCode决定的，其位置其实是固定的，加入Set 的Object必须定义equals()方法 ，另外list支持for循环，也就是通过下标来遍历，也可以用迭代器，但是set只能用迭代，因为他无序，无法用下标来取得想要的值。） 
-3.Set和List对比： 
-Set：检索元素效率低下，删除和插入效率高，插入和删除不会引起元素位置改变。 
-List：和数组类似，List可以动态增长，查找元素效率高，插入删除元素效率低，因为会引起其他元素位置改变。 
+2、List特点：元素有放入顺序，元素可重复 ，Set特点：元素无放入顺序，元素不可重复，重复元素会覆盖掉，（注意：元素虽然无放入顺序，但是元素在set中的位置是有该元素的HashCode决定的，其位置其实是固定的，加入Set 的Object必须定义equals()方法 ，另外list支持for循环，也就是通过下标来遍历，也可以用迭代器，但是set只能用迭代，因为他无序，无法用下标来取得想要的值。）
+3.Set和List对比：
+Set：检索元素效率低下，删除和插入效率高，插入和删除不会引起元素位置改变。
+List：和数组类似，List可以动态增长，查找元素效率高，插入删除元素效率低，因为会引起其他元素位置改变。
 4.Map适合储存键值对的数据
-5.线程安全集合类与非线程安全集合类 
+5.线程安全集合类与非线程安全集合类
+
 LinkedList、ArrayList、HashSet是非线程安全的，Vector是线程安全的;
 HashMap是非线程安全的，HashTable是线程安全的;
 StringBuilder是非线程安全的，StringBuffer是线程安全的。
@@ -274,19 +288,21 @@ LinkedList：
 31、ArrayList 与 Vector 区别
 ArrayList与Vector的区别和适用场景
  ArrayList有三个构造方法：
-Java代码  
-public ArrayList(int initialCapacity)//构造一个具有指定初始容量的空列表。    
-public ArrayList()//构造一个初始容量为10的空列表。    
-public ArrayList(Collection<? extends E> c)//构造一个包含指定 collection 的元素的列表   
+Java代码
+public ArrayList(int initialCapacity)//构造一个具有指定初始容量的空列表。
+public ArrayList()//构造一个初始容量为10的空列表。
+public ArrayList(Collection<? extends E> c)//构造一个包含指定 collection 的元素的列表
  Vector有四个构造方法：
-Java代码  
-public Vector()//使用指定的初始容量和等于零的容量增量构造一个空向量。    
-public Vector(int initialCapacity)//构造一个空向量，使其内部数据数组的大小，其标准容量增量为零。    
-public Vector(Collection<? extends E> c)//构造一个包含指定 collection 中的元素的向量    
-public Vector(int initialCapacity,int capacityIncrement)//使用指定的初始容量和容量增量构造一个空的向量    
+Java代码
+public Vector()//使用指定的初始容量和等于零的容量增量构造一个空向量。
+public Vector(int initialCapacity)//构造一个空向量，使其内部数据数组的大小，其标准容量增量为零。
+public Vector(Collection<? extends E> c)//构造一个包含指定 collection 中的元素的向量
+public Vector(int initialCapacity,int capacityIncrement)//使用指定的初始容量和容量增量构造一个空的向量
 ArrayList和Vector都是用数组实现的，主要有这么三个区别：
 1.Vector是多线程安全的，线程安全就是说多线程访问同一代码，不会产生不确定的结果。而ArrayList不是，这个可以从源码中看出，Vector类中的方法很多有synchronized进行修饰，这样就导致了Vector在效率上无法与ArrayList相比；
+
 2.两个都是采用的线性连续空间存储元素，但是当空间不足的时候，两个类的增加方式是不同。
+
 3.Vector可以设置增长因子，而ArrayList不可以。
 4.Vector是一种老的动态数组，是线程同步的，效率很低，一般不赞成使用。
 适用场景分析：
@@ -294,15 +310,17 @@ ArrayList和Vector都是用数组实现的，主要有这么三个区别：
 2.如果集合中的元素的数目大于目前集合数组的长度时，在集合中使用数据量比较大的数据，用Vector有一定的优势。
 
 HashSet与Treeset的适用场景
-1.TreeSet 是二差树（红黑树的树据结构）实现的,Treeset中的数据是自动排好序的，不允许放入null值 
-2.HashSet 是哈希表实现的,HashSet中的数据是无序的，可以放入null，但只能放入一个null，两者中的值都不能重复，就如数据库中唯一约束 
+1.TreeSet 是二差树（红黑树的树据结构）实现的,Treeset中的数据是自动排好序的，不允许放入null值
+
+2.HashSet 是哈希表实现的,HashSet中的数据是无序的，可以放入null，但只能放入一个null，两者中的值都不能重复，就如数据库中唯一约束
+
 3.HashSet要求放入的对象必须实现HashCode()方法，放入的对象，是以hashcode码作为标识的，而具有相同内容的String对象，hashcode是一样，所以放入的内容不能重复。但是同一个类的对象可以放入不同的实例
-   适用场景分析:HashSet是基于Hash算法实现的，其性能通常都优于TreeSet。为快速查找而设计的Set，我们通常都应该使用HashSet，在我们需要排序的功能时，我们才使用TreeSet。
+适用场景分析:HashSet是基于Hash算法实现的，其性能通常都优于TreeSet。为快速查找而设计的Set，我们通常都应该使用HashSet，在我们需要排序的功能时，我们才使用TreeSet。
 
 
 HashMap与TreeMap、HashTable的区别及适用场景
-HashMap 非线程安全  
-HashMap：基于哈希表实现。使用HashMap要求添加的键类明确定义了hashCode()和equals()[可以重写hashCode()和equals()]，为了优化HashMap空间的使用，您可以调优初始容量和负载因子。 
+HashMap 非线程安全
+HashMap：基于哈希表实现。使用HashMap要求添加的键类明确定义了hashCode()和equals()[可以重写hashCode()和equals()]，为了优化HashMap空间的使用，您可以调优初始容量和负载因子。
 TreeMap：非线程安全基于红黑树实现。TreeMap没有调优选项，因为该树总处于平衡状态。 
 适用场景分析：
 HashMap和HashTable:HashMap去掉了HashTable的contains方法，但是加上了containsValue()和containsKey()方法。HashTable同步的，而HashMap是非同步的，效率上比HashTable要高。HashMap允许空键值，而HashTable不允许。
@@ -315,27 +333,56 @@ HashMap的结构就是哈希表，底层是一个数组，这个数组中尽可�
 34、为了减少冲突，我们需要时刻留意当前的size是否太大，检查是否需要扩容，一旦超过设定的threshold，那么就要重新增大数组尺寸，此时所有元素都需要重新计算应该放置的下标。
 负载因子，默认为0.75  16个大小，超过12时候，需要扩容2倍。
 
-35、HashMap 和 ConcurrentHashMap 的区别、HashMap 和 Hashtable 的区别
+35、HashMap 和 ConcurrentHashMap 的区别、
+https://www.cnblogs.com/williamjie/p/9099861.html
+
+HashMap 和 Hashtable 的区别
+https://www.cnblogs.com/williamjie/p/9099715.html
+
+
 并发场景、并发场景
+
+
 36、HashMap 的工作原理及代码实现
 HashMap 是基于哈希表的 Map 接口的非同步实现。此实现提供所有可选的映射操作，并允许使用 null 值和 null 键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变；在 Java 编程语言中，最基本的结构就是两种，一个是数组，另外一个是指针（引用），HashMap 就是通过这两个数据结构进行实现。HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。
-【https://www.cnblogs.com/wxd0108/p/6382196.html】
+
+https://www.cnblogs.com/wxd0108/p/6382196.html
+
+
 37、ConcurrentHashMap 的工作原理及代码实现
 ConcurrentHashmap在高并发的使用，主要是锁的力度
 JDK6,7中的ConcurrentHashmap主要使用Segment来实现减小锁粒度，把HashMap分割成若干个Segment，在put的时候需要锁住Segment，get时候不加锁，使用volatile来保证可见性，当要统计全局时（比如size），首先会尝试多次计算modcount来确定，这几次尝试中，是否有其他线程进行了修改操作，如果没有，则直接返回size。如果有，则需要依次锁住所有的Segment来计算。
+
 jdk7中ConcurrentHashmap中，当长度过长碰撞会很频繁，链表的增改删查操作都会消耗很长的时间，影响性能,所以jdk8 中完全重写了concurrentHashmap,代码量从原来的1000多行变成了 6000多 行，实现上也和原来的分段式存储有很大的区别。
-主要设计上的变化有以下几点: 
+主要设计上的变化有以下几点:
+
 不采用segment而采用node，锁住node来实现减小锁粒度。
 设计了MOVED状态 当resize的中过程中 线程2还在put数据，线程2会帮助resize。
 使用3个CAS操作来确保node的一些操作的原子性，这种方式代替了锁。
 sizeCtl的不同值来代表不同含义，起到了控制的作用。
 至于为什么JDK8中使用synchronized而不是ReentrantLock，我猜是因为JDK8中对synchronized有了足够的优化吧。
+https://www.cnblogs.com/williamjie/p/9358190.html
+
 
 38.  java集合
 a.  面试题：List 和 Set 的区别（ 换一种说法你说说collection里面有什么子类）。（其实面试的时候听到这个问题的时候，你要知道，面试官是想考察List，Set）正如图一，list和set是实现了collection接口的。
-List：1.可以允许重复的对象。　　  2.可以插入多个null元素。        3.是一个有序容器，保持了每个元素的插入顺序，输出的顺序就是插入的顺序。        4.常用的实现类有 ArrayList、LinkedList 和 Vector。ArrayList 最为流行，它提供了使用索引的随意访问，而 LinkedList 则对于经常需要从 List 中添加或删除元素的场合更为合适。
-Set：1.不允许重复对象　　   2. 无序容器，你无法保证每个元素的存储顺序，TreeSet通过 Comparator  或者 Comparable 维护了一个排序顺序。        3. 只允许一个 null 元素        4.Set 接口最流行的几个实现类是 HashSet、LinkedHashSet 以及 TreeSet。最流行的是基于 HashMap 实现的 HashSet；TreeSet 还实现了 SortedSet 接口，因此 TreeSet 是一个根据其 compare() 和 compareTo() 的定义进行排序的有序容器。
-Map不是collection的子接口或者实现类。Map是一个接口。2.Map 的 每个 Entry 都持有两个对象，也就是一个键一个值，Map 可能会持有相同的值对象但键对象必须是唯一的。3. TreeMap 也通过 Comparator  或者 Comparable 维护了一个排序顺序。4. Map 里你可以拥有随意个 null 值但最多只能有一个 null 键。5.Map 接口最流行的几个实现类是 HashMap、LinkedHashMap、Hashtable 和 TreeMap。（HashMap、TreeMap最常用）
+List：
+1.可以允许重复的对象。　　
+2.可以插入多个null元素。        3.是一个有序容器，保持了每个元素的插入顺序，输出的顺序就是插入的顺序。
+4.常用的实现类有ArrayList、LinkedList和Vector。ArrayList最为流行，它提供了使用索引的随意访问，而 LinkedList 则对于经常需要从 List 中添加或删除元素的场合更为合适。
+
+Set：
+1.不允许重复对象　
+2. 无序容器，你无法保证每个元素的存储顺序，TreeSet通过 Comparator  或者 Comparable 维护了一个排序顺序。
+3. 只允许一个 null 元素
+4.Set 接口最流行的几个实现类是 HashSet、LinkedHashSet 以及 TreeSet。最流行的是基于 HashMap 实现的 HashSet；TreeSet 还实现了 SortedSet 接口，因此 TreeSet 是一个根据其 compare() 和 compareTo() 的定义进行排序的有序容器。
+
+
+1.Map不是collection的子接口或者实现类。Map是一个接口。
+2.Map 的 每个 Entry 都持有两个对象，也就是一个键一个值，Map 可能会持有相同的值对象但键对象必须是唯一的。
+3. TreeMap 也通过 Comparator  或者 Comparable 维护了一个排序顺序。
+4. Map 里你可以拥有随意个 null 值但最多只能有一个 null 键。
+5.Map 接口最流行的几个实现类是HashMap、LinkedHashMap、Hashtable和TreeMap。（HashMap、TreeMap最常用）
 
 b.面试题：什么场景下使用list，set，map呢？（或者会问为什么这里要用list、或者set、map，这里回答它们的优缺点就可以了）
 
@@ -343,47 +390,34 @@ b.面试题：什么场景下使用list，set，map呢？（或者会问为什�
 如果你想容器中的元素能够按照它们插入的次序进行有序存储，那么还是 List，因为 List 是一个有序容器，它按照插入顺序进行存储。
 
 如果你想保证插入元素的唯一性，也就是你不想有重复值的出现，那么可以选择一个 Set 的实现类，比如 HashSet、LinkedHashSet 或者 TreeSet。所有 Set 的实现类都遵循了统一约束比如唯一性，而且还提供了额外的特性比如 TreeSet 还是一个 SortedSet，所有存储于 TreeSet 中的元素可以使用 Java 里的 Comparator 或者 Comparable 进行排序。LinkedHashSet 也按照元素的插入顺序对它们进行存储。
+
 如果你以键和值的形式进行数据存储那么 Map 是你正确的选择。你可以根据你的后续需要从 Hashtable、HashMap、TreeMap 中进行选择。
 
 
-有序否
-允许元素重复否
-Collection
-否
-是
-List
-是
-是
-Set
-AbstractSet
-否
-否
-HashSet
-TreeSet
-是（用二叉树排序）
-Map
-AbstractMap
-否
-使用key-value来映射和存储数据，Key必须惟一，value可以重复
-HashMap
-TreeMap
-是（用二叉树排序）
-List接口对Collection进行了简单的扩充，它的具体实现类常用的有ArrayList和LinkedList。你可以将任何东西放到一个List容器中，并在需要时从中取出。ArrayList从其命名中可以看出它是一种类似数组的形式进行存储，因此它的随机访问速度极快，而LinkedList的内部实现是链表，它适合于在链表中间需要频繁进行插入和删除操作。在具体应用时可以根据需要自由选择。前面说的Iterator只能对容器进行向前遍历，而ListIterator则继承了Iterator的思想，并提供了对List进行双向遍历的方法。 
+List接口对Collection进行了简单的扩充，它的具体实现类常用的有ArrayList和LinkedList。你可以将任何东西放到一个List容器中，并在需要时从中取出。ArrayList从其命名中可以看出它是一种类似数组的形式进行存储，因此它的随机访问速度极快，而LinkedList的内部实现是链表，它适合于在链表中间需要频繁进行插入和删除操作。在具体应用时可以根据需要自由选择。前面说的Iterator只能对容器进行向前遍历，而ListIterator则继承了Iterator的思想，并提供了对List进行双向遍历的方法。
 
 Set接口也是Collection的一种扩展，而与List不同的时，在Set中的对象元素不能重复，也就是说你不能把同样的东西两次放入同一个Set容器中。它的常用具体实现有HashSet和TreeSet类。HashSet能快速定位一个元素，但是你放到HashSet中的对象需要实现hashCode()方法，它使用了前面说过的哈希码的算法。而TreeSet则将放入其中的元素按序存放，这就要求你放入其中的对象是可排序的，这就用到了集合框架提供的另外两个实用类Comparable和Comparator。一个类是可排序的，它就应该实现Comparable接口。有时多个类具有相同的排序算法，那就不需要在每分别重复定义相同的排序算法，只要实现Comparator接口即可。集合框架中还有两个很实用的公用类：Collections和Arrays。Collections提供了对一个Collection容器进行诸如排序、复制、查找和填充等一些非常有用的方法，Arrays则是对一个数组进行类似的操作。
 
 Map是一种把键对象和值对象进行关联的容器，而一个值对象又可以是一个Map，依次类推，这样就可形成一个多级映射。对于键对象来说，像Set一样，一个Map容器中的键对象不允许重复，这是为了保持查找结果的一致性;如果有两个键对象一样，那你想得到那个键对象所对应的值对象时就有问题了，可能你得到的并不是你想的那个值对象，结果会造成混乱，所以键的唯一性很重要，也是符合集合的性质的。当然在使用过程中，某个键所对应的值对象可能会发生变化，这时会按照最后一次修改的值对象与键对应。对于值对象则没有唯一性的要求。你可以将任意多个键都映射到一个值对象上，这不会发生任何问题（不过对你的使用却可能会造成不便，你不知道你得到的到底是那一个键所对应的值对象）。Map有两种比较常用的实现：HashMap和TreeMap。HashMap也用到了哈希码的算法，以便快速查找一个键，TreeMap则是对键按序存放，因此它便有一些扩展的方法，比如firstKey(),lastKey()等，你还可以从TreeMap中指定一个范围以取得其子Map。键和值的关联很简单，用pub(Object key,Object value)方法即可将一个键与一个值对象相关联。用get(Object key)可得到与此key对象所对应的值对象。
 
-39. Serializable接口,序列化：对象的寿命通常随着生成该对象的程序的终止而终止，有时候需要把在内存中的各种对象的状态（也就是实例变量，不是方法）保存下来，并且可以在需要时再将对象恢复。虽然你可以用你自己的各种各样的方法来保存对象的状态，但是Java给你提供一种应该比你自己的好的保存对象状态的机制，那就是序列化。
+39. Serializable接口
+序列化：对象的寿命通常随着生成该对象的程序的终止而终止，有时候需要把在内存中的各种对象的状态（也就是实例变量，不是方法）保存下来，并且可以在需要时再将对象恢复。虽然你可以用你自己的各种各样的方法来保存对象的状态，但是Java给你提供一种应该比你自己的好的保存对象状态的机制，那就是序列化。
+
 总结：Java 序列化技术可以使你将一个对象的状态写入一个Byte 流里（系列化），并且可以从其它地方把该Byte 流里的数据读出来（反序列化）。
-系列化的用途
+
+序列化的用途
 想把的内存中的对象状态保存到一个文件中或者数据库中时候
 想把对象通过网络进行传播的时候
 
 
 
 40.String,StringBuffer与StringBuilder的区别
-https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247485731&idx=2&sn=be928543d1fa975c9a6225129c601a8c&scene=21#wechat_redirect（Java技术之路技术整理（长期更新））
+https://www.cnblogs.com/williamjie/p/9466864.html
+
+
+
+
+
 
 
 
@@ -394,14 +428,10 @@ https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247485731&idx=2&sn=be9285
 默认的负载因子（0.75）给定的默认容量为 16，负载因子为0.75。Map在使用过程中不断的往里面存放数据，当数量达到了 16 * 0.75 = 12 就需要将当前 16的容量进行扩容，而扩容这个过程涉及到rehash、复制数据等操作，所以非常消耗性能。
 
 当调用addEntry写入Entry时需要判断是否需要扩容。如果需要就进行两倍扩充，并将当前的key 重新hash并定位。
-
-
-
 https://www.cnblogs.com/williamjie/p/9358190.html
 
 
-
-
+https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247485731&idx=2&sn=be928543d1fa975c9a6225129c601a8c&scene=21#wechat_redirect（Java技术之路技术整理（长期更新））
 
 
 

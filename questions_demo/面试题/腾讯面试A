@@ -1,38 +1,27 @@
 
-
-
-
-
-
-
-
-
-
-
-
 1.过去工作经历回忆。
 做过的项目介绍
 
 
-业务开发（广、某一块深）和平台开发（深）
+2.业务开发（广、某一块深）和平台开发（深）
 
 
-redis 使用集群：
+3.redis 使用集群：
 twiter集群模式、codis集群、sentinal集群、redis3.0集群功能
 
-介绍他们的工作
+4.介绍他们的工作
 
-2.包括目前薪酬、
+5.包括目前薪酬、
 
-C++里面的虚函数 ; 虚表以及虚指针
+6.C++里面的虚函数 ; 虚表以及虚指针
 
-3.STL map数据结构  hashmap 数据结构
+7.STL map数据结构  hashmap 数据结构
 
-libevent 边沿触发 水平触发（一直通知）
+8.libevent 边沿触发 水平触发（一直通知）
 
 epoll 一颗红黑树，如何查找到时间 epoll能够高效支持百万级别的句柄监听
 
-redis查找问题，10W/S的并发
+9.redis查找问题，10W/S的并发
 redis出现问题很慢
 aof （i/o慢） snap 快照 （内存不够）
 句柄fd socket等 tcp调优
@@ -43,11 +32,11 @@ redis的几种数据机构，redis原理
 
 redis单线程多线程
 
-语言模型C++  java  golang
+10.语言模型C++  java  golang
 
-redis mongdb
+11.redis mongdb
 
-一致性hash算法，hash碰撞
+12.一致性hash算法，hash碰撞
 
 redis内存淘汰机制
 　　volatile-lru：  从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰（默认值）

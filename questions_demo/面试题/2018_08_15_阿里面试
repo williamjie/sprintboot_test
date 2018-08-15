@@ -25,13 +25,15 @@ Rabbit MQ默认是不持久队列，持久化会对RabbitMQ的性能造成比较
 https://www.cnblogs.com/williamjie/p/9481898.html
 
 6.redis使用比较多；redis有哪些集群方案，mongdb存储结构
+mysql的存储结构  inndb b+树
+mysql mongodb存储结构
 
 7.使用过哪些java线程池以及连接池，自己管理线程池注意哪些地方
 死锁，内存释放，以及fullgc gc这些情况下，异常处理。
 
 8.docker spring boot  ioc  aop这些
 
-9.redis数据结构以及
+9.redis数据结构以及redis集群
 
 10.分布式锁
 redis分布式锁，setnx来实现
@@ -46,9 +48,6 @@ redis分布式锁，setnx来实现
 ioc可以理解为组件复用，不需要重复造轮子。
 
 15.aop理解
-
-16.mysql的存储结构  inndb b+树
-mysql mongodb存储结构
 
 21.对他有什么问题
 1.岗位是否有需要涉及算法编写，目前的话事儿没有这方面知识储备。如果有需要的话，可能会有偏差。

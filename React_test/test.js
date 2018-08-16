@@ -13,7 +13,8 @@ class LikeButton extends Component{
 
 	handleClickOnLikeButton(){
 		this.setState({
-			isLiked:!this.state,isLiked
+			isLik
+			ed:!this.state,isLiked
 		})
 	}
 

@@ -1,0 +1,10 @@
+2 . 驼峰式命名法：
+
+又叫小驼峰式命名法。
+第一个单词首字母小写，后面其他单词首字母大写。
+
+ex:
+int myAge;
+char myName[10];
+float manHeight;
+

@@ -20,6 +20,11 @@ Rabbit MQ默认是不持久队列，持久化会对RabbitMQ的性能造成比较
 
 4.基本基础没问题，架构设计什么的就没问题了
 没有涉及算法、数据结构以及项目中的具体问题。
+线程池使用了那些
+https://www.cnblogs.com/williamjie/p/9485723.html
+可以说说golang的协程概念
+java 但是在 64 位的环境中，JVM 会为每个线程分配 1M 的栈
+golang 每个新建的 Goroutine 只有大约 4KB 的栈
 
 5.mysql使用比较多，介绍下mysql存储引擎、以及mysql数据类型
 https://www.cnblogs.com/williamjie/p/9481898.html

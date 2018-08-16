@@ -1,10 +1,28 @@
-import React from 'react';
+//import React from 'react';
+//import App from './App';
+//import registerServiceWorker from './registerServiceWorker';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+
+import React,{ Component } from 'react'
+
+class Header extends Component {
+  render(){
+    return (
+      <div>
+        <h1>React 小书</h1>
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(
+  <Header />,
+  document.getElementById('root')
+)
 
 
+/*
 class LikeButton extends Component {
     constructor () {
       super()
@@ -27,6 +45,10 @@ class LikeButton extends Component {
     }
   }
 
-  mount(new LikeButton(), wrapper)
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+mount(new LikeButton(), wrapper)
+ReactDOM.render(
+  <App />, 
+  document.getElementById('root')
+)
+registerServiceWorker()
+*/

@@ -130,8 +130,11 @@ java jvm (https://www.cnblogs.com/williamjie/p/9493282.html)
 
 4.关于消息中间件，各种选型
 
-4.关于框架、框架spring cloud  dubble  k8s
+4.关于框架、框架spring cloud  dubble  k8s 
 各个原理以及缺点
+
+service mesh  Istio
+
 
 
 

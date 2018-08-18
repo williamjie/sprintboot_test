@@ -1,6 +1,12 @@
 
 MySQL经典面试题
 
+
+left join 和 left outer join 的区别
+https://www.cnblogs.com/williamjie/p/9498032.html
+
+
+
 MySQL技术内幕InnoDB存储引擎（表&索引算法和锁）
 https://www.cnblogs.com/williamjie/p/9485569.html
 

@@ -15,16 +15,22 @@ AOF 持久化
 string list  hash  set  zset
 Streams:一个新的Redis通用数据结构它是一个新的强大的支持多播的可持久化的消息队列，作者坦言Redis Stream狠狠地借鉴了Kafka的设计。
 
-
 2.redis分布式锁
 加锁；解锁
 https://www.cnblogs.com/williamjie/p/9395659.html
 
 3.redis延时队列
+https://www.cnblogs.com/williamjie/p/9504005.html
 
 4.位图
+https://www.cnblogs.com/williamjie/p/9505005.html
+https://www.cnblogs.com/williamjie/p/9486086.html
+setbit
+getbit 巧用偏移量
 
 5.HyperLogLog
+https://www.cnblogs.com/williamjie/p/9505075.html
+
 
 6.布隆过滤器
 
@@ -33,20 +39,25 @@ https://www.cnblogs.com/williamjie/p/9395659.html
 8.redis漏斗限流
 
 9.GeoHash 地理位置
+https://www.cnblogs.com/williamjie/p/9505117.html
 
-10.Scan 大海捞针
+10.Scan大海捞针
+keys阻塞进程;新的模糊查询方法
 
 11.线程IO模型
+libevent事务模型
 
-12.redis 通讯协议
+12.redis通讯协议
 
 13.redis持久化
 RDB 持久化
-AOF 持久化
+AOF 持久化：重启加载时间特别长，并且阻塞操作
 
 14.管道
+异步操作、
 
 15.事务
+watch  multi  exec
 
 16.pub/sub
 
@@ -59,6 +70,7 @@ AOF 持久化
 20.codis
 
 21.Cluster
+https://www.cnblogs.com/williamjie/p/9505180.html
 
 22.Stream 队列功能
 

@@ -31,12 +31,15 @@ getbit 巧用偏移量
 5.HyperLogLog
 https://www.cnblogs.com/williamjie/p/9505075.html
 
-
 6.布隆过滤器
+https://www.cnblogs.com/williamjie/p/9505233.html
 
 7.redis限流
+https://www.cnblogs.com/williamjie/p/9505328.html
+https://www.cnblogs.com/williamjie/p/9505432.html
 
 8.redis漏斗限流
+固定速率请求发送出去。
 
 9.GeoHash 地理位置
 https://www.cnblogs.com/williamjie/p/9505117.html
@@ -60,14 +63,19 @@ AOF 持久化：重启加载时间特别长，并且阻塞操作
 watch  multi  exec
 
 16.pub/sub
+订阅功能；
 
 17.小对象压缩
 
 18.主从同步
+fork()子线程；由子线程来save数据，新增数据命令形式保存；sync同步之后，新增命令同步到slave redis
 
 19.Sentinel
+哨兵模式，分布式，互相感知；如果多数认为，主从切换
+https://www.cnblogs.com/williamjie/p/9505782.html
 
 20.codis
+有一些命令是无法使用的blpoplpush
 
 21.Cluster
 https://www.cnblogs.com/williamjie/p/9505180.html
@@ -77,8 +85,15 @@ https://www.cnblogs.com/williamjie/p/9505180.html
 23.info功能
 
 24.redis 过期策略
+a.有过期时间的过期时间
+b.有过期时间的快过期
+c.有过期时间的随机淘汰
+d.无过期时间的最远使用淘汰
+e.无过期时间的随机淘汰
 
 25.LRU策略
+https://www.cnblogs.com/williamjie/p/9505810.html
+最近最久未使用算法
 
 26.懒惰删除；
 过期的key，不是主动删除；下一次请求，检查时间过期了，删除缓存；

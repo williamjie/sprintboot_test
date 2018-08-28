@@ -1,0 +1,132 @@
+【讲师介绍】
+
+
+吕一明。高级java工程师，公众号java思维导图的号主，拥有5年的互联网开发经验。喜欢专研和分享技术，擅长使用思维导图总结和梳理java知识。
+
+【课程大纲】
+
+思维导图梳理知识、网站发展历程梳理
+利用思维导图快速学习主流框架
+学会思维导图解读开源项目，积累经验
+网站从零到分布式架构演变与知识体系介绍
+Spring综合讲解
+Spring Ioc原理讲解
+Servlet到MVC到Spring Mvc的比较式学习
+spring mvc原理分析
+持久层框架mybatis篇与mybatis-plus使用
+mybatis原理讲解
+手写一个简易mybatis
+增强工具mybatis-plus
+spring boot篇与lombok介绍（两节课）
+spring boot与spring mvc之间的关系
+spring boot集成mybatis
+spring boot集成redis
+spring boot集成spring session解决session共享问题
+spring boot的日志管理lockback介绍
+使用工具lombok使用，消除冗长
+redis与ehcache缓存对比与使用
+缓存的用法
+ehcache缓存策略详解
+使用ehcache作为mybatis的二级缓存
+redis的五种基本类型详解与运用
+spring的缓存注解使用
+接口文档swagger2与接口调试工具postman
+swagger2的常用注解介绍
+springboot集成swagger2
+Restful接口设计
+调试工具postman使用
+开源框架-快速开发平台renren-fast解读
+项目技术框架分析
+前后端分离-token机制
+自定义异常-学会如何优雅处理异常
+安全防范模块--预防xss攻击与sql注入
+redis的实战运用分析
+多数据源的使用分析总结
+spring data jpa的运用
+jpa、hibernate、spring data jpa关系讲解
+spring boot集成spring data jpa
+jpa的常用注解
+jpa的基本CRUD操作
+开源项目-多人博客项目mblog解读
+项目模块业务切分
+开发授权OAuth2.0介绍--qq、微博登录
+消息发布与通知模块解读
+全文检索工具hibernate search的运用
+权限框架shiro介绍与使用
+shiro详细架构讲解
+简单shiro例子--hello world
+shiro认证流程与原理分析
+spring boot集成shiro
+renren-fast项目的授权模块分析
+持续集成工具jenkins的安装与运用
+jenkins环境安装与界面介绍
+插件管理与介绍
+jenkins发布maven项目war包到tomcat
+nginx负载均衡工具介绍与运用
+负载均衡与故障转移
+正向代理与反向代理的区别
+nginx安装与常用命令
+nginx能做什么？（负载均衡、动静分离等）
+nginx实现蓝绿部署
+tomcat的整体架构介绍与session共享方案
+Http server与tomcat
+tomcat的整体架构与组件解读
+tomcat的基本工作流程
+tomcat的性能优化
+tomcat基于插件实现session共享
+websocket协议介绍，学会即时通讯
+http与websocket
+websocket协议解析
+websocket项目hello world
+spring boot基于STOMP协议集成websocket
+百万级网络通讯框架t-io介绍与项目实战
+t-io框架的hello world
+t-io常用类说明
+开源项目SpringBootLayIM解读（springboot+layim+t-io）
+开源项目-秒杀、抢购解决方案miaoshao解读（两节课）
+秒杀系统场景特点与设计要点分析
+高并发优化方向
+秒杀限流处理
+灵活使用redis五种数据类型
+mysql的存储过程使用
+高并发测试，jmeter工具的使用
+Elasticsearch - 搜索引擎入门
+基础概念与应用场景
+Elasticsearch安装与启动
+创建/删除索引，增删改查数据
+索引原理分析
+微服务套装spring cloud篇（两节课）
+基于rest的简易微服务hello world
+spring cloud核心特性与整体架构分析
+注册中心--Eureka详解
+服务消费者--Feign详解
+熔断器--Hystrx详解
+服务网关--Zuul详解
+消息队列RabbitMq的使用
+消息与消息队列
+RabbitMq安装与基本命令
+RabbitMq的五种队列模式分析与代码实战
+消息确认机制（事务+Confirm）详解
+Spring boot集成RabbitMq
+认识nosql数据库MongoDB
+mongodb简介特点，与redis、mysql的区别
+mongodb的使用场景分析与实例讲解
+mongodb的linux安装
+mongodb的数据库、集合、文档等概念解析与操作
+springboot集成mongodb实现增删改查
+代码实现mysql的数据同步到mongodb
+课程回顾与大总结
+前面课程的知识回顾与总结
+技术栈的使用场景与综合运用分析
+课程作业项目讲解
+【课后作业】
+
+
+使用训练营学过的技术框架搭建一个的超级博客项目。
+
+前端技术栈 ：
+vue.js、layui（前端技术不一定，可能直接用jsp，主要在后端）
+
+后端技术栈：
+SpringBoot、mybatis plus、shiro、redis、mysql、mongodb、elasticseach、swagger2、lombok、websocket、rabbitMq、springCloud、springSession ...
+
